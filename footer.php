@@ -9,6 +9,8 @@
  */
 ?>
 
+</div><!--/ end .page-wrap-->
+
 <div class="footer-container">
 	<footer class="footer">
 		<?php dynamic_sidebar( 'footer-widgets' ); ?>

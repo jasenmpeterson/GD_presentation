@@ -17,16 +17,6 @@
   position: relative;
   overflow: hidden;
 
-  &:before {
-    content: url('../images/backgrounds/home_bg_blurred.png');
-    opacity: .92;
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    min-height: 100vh;
-    top: 0;
-  }
-
 }
 
 .gd-homepage-hero .grid-x {
@@ -44,37 +34,6 @@
   width: 12rem;
   @media only screen and (max-width: 39.94rem) {
     width: 10rem;
-  }
-}
-
-@keyframes outline {
-  0% {
-    outline: 1px solid;
-    outline-color: rgba(255, 255, 255, .5);
-    outline-offset: 0px;
-  }
-  100% {
-    outline: 1px solid;
-    outline-color: rgba(255, 255, 255, 0);
-    outline-offset: 15px;
-  }
-}
-
-@keyframes box-shadow {
-  0% {
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
-  }
-  100% {
-    box-shadow: inset 0 0 20px rgba(255, 255, 255, .2), 0 0 20px rgba(255, 255, 255, .2);
-  }
-}
-
-@keyframes text-shadow {
-  0% {
-    text-shadow: none;
-  }
-  100% {
-    text-shadow: 1px 1px 2px #000000;
   }
 }
 

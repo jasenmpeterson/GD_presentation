@@ -18,13 +18,13 @@ function foundationpress_asset_path( $filename ) {
 	$filename_split = explode( '.', $filename );
 	$dir = end( $filename_split );
 	$manifest_path = dirname( dirname(__FILE__) ) . '/dist/assets/' . $dir . '/rev-manifest.json';
-	
+
 	if ( file_exists($manifest_path ) ) {
 		$manifest = json_decode( file_get_contents( $manifest_path ), TRUE);
 	} else {
 		$manifest = [];
 	}
-	
+
 	if ( array_key_exists( $filename, $manifest) ) {
 		return $manifest[$filename];
 	}
@@ -39,14 +39,34 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// Enqueue the main Stylesheet.
 		wp_enqueue_style( 'main-stylesheet',  get_template_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path('app.css'), array(), '2.10.4', 'all' );
 
+		// Font Awesome
+
+		wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/4e8f29066f.js', array(), '1', true);
+
 		// Deregister the jquery version bundled with WordPress.
 		wp_deregister_script( 'jquery' );
 
 		// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
 		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', false );
 
+
 		// Enqueue Founation scripts
-		wp_enqueue_script( 'foundation', get_template_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path('app.js'), array( 'jquery' ), '2.10.4', true );
+		wp_register_script( 'foundation', get_template_directory_uri() . '/dist/assets/js/' . foundationpress_asset_path('app.js'), array( 'jquery' ), '2.10.4', true );
+
+		$pageParams = array(
+
+			'themeDirectory'   => get_template_directory_uri(),
+			'root'      => get_home_url(),
+			'ajaxurl'   => admin_url('admin-ajax.php')
+		);
+
+		wp_localize_script(
+			'foundation',
+			'pageParams',
+			$pageParams
+		);
+
+		wp_enqueue_script('foundation');
 
 		// Enqueue FontAwesome from CDN. Uncomment the line below if you don't need FontAwesome.
 		//wp_enqueue_script( 'fontawesome', 'https://use.fontawesome.com/5016a31c8c.js', array(), '4.7.0', true );

@@ -18,7 +18,7 @@ get_header();
 		<div class="grid-x align-middle">
 
 			<div class="cell medium-5 drilling">
-				<div class="section-button">
+				<div class="section-button" data-page="10">
 					Drilling
 				</div>
 			</div>
@@ -28,7 +28,7 @@ get_header();
 			</div>
 
 			<div class="cell medium-5 fracking">
-				<div class="section-button">
+				<div class="section-button" data-page="12">
 					Fracking
 				</div>
 			</div>

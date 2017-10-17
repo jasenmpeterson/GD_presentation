@@ -77,9 +77,11 @@
 @import "templates/kitchen-sink";
 
 // Theme
+@import "theme/colors";
+@import "theme/animations";
 @import "theme/layout";
-@import "theme/colors.scss";
 @import "theme/components/title-bar";
 @import "theme/components/top-bar";
 @import "theme/components/footer";
 @import "theme/pages/home";
+@import "theme/pages/product";

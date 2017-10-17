@@ -1,3 +1,17 @@
 .top-bar, .top-bar ul {
+  background-color: $usc-cardinal;
+}
+
+.top-bar .menu li:not(:last-child) {
+  border-right: none;
+}
+
+.top-bar .menu a {
+  color: #fff;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.top-bar .menu a:hover:not(.button) {
   background-color: transparent;
 }
