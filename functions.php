@@ -54,5 +54,8 @@ require_once( 'library/responsive-images.php' );
 /** ACF */
 require_once( 'library/acf.php' );
 
+/** Remove Content editor */
+require_once( 'library/remove-content-editor.php' );
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );

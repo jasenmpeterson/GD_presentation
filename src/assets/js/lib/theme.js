@@ -1,39 +1,63 @@
-$(document).ready(function() {
+import ScrollMagic from 'scrollmagic/scrollmagic/uncompressed/ScrollMagic';
 
-  // ajax page loading:
+// ajax page loading:
 
-  // -- button click
+// -- button click
 
-  $('.section-button').click(function () {
-    var id = $(this).attr('data-page')
-    loadPage(id)
+$('.section-button').click(function () {
+  var slug = $(this).attr('data-page')
+  loadPage(slug)
+})
+
+// -- ajax call
+
+function loadPage(slug) {
+  // ajax spinner
+  $('.wipe').addClass('shown')
+  $('.ajax-loader').addClass('active')
+  $.ajax({
+    url: slug,
+    context: document.body,
+    success: function (data) {
+      // ajax spinner
+      $('.ajax-loader').removeClass('active')
+      $('.wipe').addClass('active')
+      pageDisplay(data)
+    }
   })
+}
 
-  // -- ajax call
+// -- page display
 
-  function loadPage(page) {
-    // ajax spinner
-    $('.ajax-loader').addClass('active')
-    $.ajax({
-      url: '/wp-json/acf/v3/pages/'+page,
-      success: function (data) {
-        pageDisplay(data)
-        // ajax spinner
-        $('.ajax-loader').removeClass('active')
-      }
-    })
-  }
+function pageDisplay(data) {
+  $('body').addClass('product-page')
+  $('.page-wrap').html(data)
+  productScrollMagic()
+}
 
-  // -- page display
+// ScrollMagic -- https://github.com/janpaepke/ScrollMagic
 
-  var pageData = {}
+function productScrollMagic() {
 
-  function pageDisplay(data) {
-    pageData['bottom_line'] = data.acf.the_bottom_line
-    $('.page-wrap').load(pageParams.themeDirectory+'/page-templates/drilling.php', function() {
-      $('.product-template .the-bottom-line').append(data.acf.the_bottom_line)
-      $('body').addClass('product-page drilling-page')
-    })
-  }
+  // -- scene controller
 
-});
+  var sceneController = new ScrollMagic.Controller();
+
+  // -- the bottom line scene
+
+  new ScrollMagic.Scene({
+    triggerElement: '.the-bottom-line'
+  })
+    .setClassToggle('.the-bottom-line', 'active')
+    .addTo(sceneController)
+
+  // -- the product scene
+
+  new ScrollMagic.Scene({
+    triggerElement: '.product'
+  })
+    .setClassToggle('.product', 'active')
+    .addTo(sceneController)
+
+}
+

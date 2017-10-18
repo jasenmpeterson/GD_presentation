@@ -39,6 +39,7 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 		// Enqueue the main Stylesheet.
 		wp_enqueue_style( 'main-stylesheet',  get_template_directory_uri() . '/dist/assets/css/' . foundationpress_asset_path('app.css'), array(), '2.10.4', 'all' );
 
+
 		// Font Awesome
 
 		wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/4e8f29066f.js', array(), '1', true);
