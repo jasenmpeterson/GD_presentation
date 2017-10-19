@@ -1,12 +1,10 @@
-import ScrollMagic from 'scrollmagic/scrollmagic/uncompressed/ScrollMagic';
-
 // ajax page loading:
 
 // -- button click
 
 $('.section-button').click(function () {
   var slug = $(this).attr('data-page')
-  loadPage(slug)
+  loadPage(slug);
 })
 
 // -- ajax call
@@ -22,7 +20,7 @@ function loadPage(slug) {
       // ajax spinner
       $('.ajax-loader').removeClass('active')
       $('.wipe').addClass('active')
-      pageDisplay(data)
+      pageDisplay(data);
     }
   })
 }
@@ -41,7 +39,12 @@ function productScrollMagic() {
 
   // -- scene controller
 
-  var sceneController = new ScrollMagic.Controller();
+  var sceneController = new ScrollMagic.Controller(
+    {
+      container: '.parallax',
+      globalSceneOptions: { duration: '200%' }
+
+    });
 
   // -- the bottom line scene
 
@@ -54,10 +57,16 @@ function productScrollMagic() {
   // -- the product scene
 
   new ScrollMagic.Scene({
-    triggerElement: '.product'
+    triggerElement: '.minimize-time-product'
   })
-    .setClassToggle('.product', 'active')
+    .on('enter', function(event) {
+      console.log('wtf')
+      if(event.scrollDirection === 'FORWARD') {
+        $('.product').addClass('active')
+      }
+    })
     .addTo(sceneController)
+    .addIndicators()
 
 }
 

@@ -1,5 +1,10 @@
+html,
 body {
-  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  overflow: hidden;
   background-color: $white-smoke;
 }
 
@@ -55,6 +60,36 @@ div.wipe.shown {
 div.wipe.active {
   transform: translateX(-100%);
   z-index: 10;
+}
+
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scroll-behavior: smooth;
+}
+
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.parallax__layer--base {
+  transform: translateZ(0);
+}
+
+.parallax__layer--back {
+  transform: translateZ(-1px) scale(2);
+}
+
+.parallax__group {
+  position: relative;
+  height: 100vh;
+  transform-style: preserve-3d;
 }
 
 h1,
