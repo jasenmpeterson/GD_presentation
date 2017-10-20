@@ -43,6 +43,8 @@ if ( ! function_exists( 'foundationpress_scripts' ) ) :
 
 		wp_enqueue_script('gsap', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js', array(), '1', true);
 
+		wp_enqueue_script('gsap-scroll-to', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/plugins/ScrollToPlugin.min.js', array(), '1', true);
+
 		// Scroll Magic
 
 		wp_enqueue_script('scrollmagic', 'http://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.js', array(), '1', true);

@@ -120,7 +120,6 @@
   width: 25px;
   height: 25px;
   margin: 0 auto;
-  cursor: pointer;
   transition: all 1s cubic-bezier(.645,.045,.355,1);
   animation: scroll-down 1.5s infinite;
   animation-delay: 3.25s;
@@ -131,6 +130,64 @@
   stroke: $usc-cardinal;
   stroke-miterlimit: 10;
   stroke-width: 4px;
+}
+
+.bullet-list-wrap.dark {
+
+  transition: opacity 600ms, transform 600ms 111ms, box-shadow 600ms;
+  background-color: $charleston-green;
+  padding: 2.5rem 1rem;
+  opacity: 0;
+  @include box-shadow-all();
+
+  h3,
+  li {
+    color: #fff;
+  }
+
+}
+
+.bullet-list-wrap h3 {
+  color: $granite-gray;
+  padding-left: 1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 600ms, transform 600ms 80ms;
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.bullet-list-wrap h3:before {
+  content: '';
+  display: block;
+  height: 1px;
+  opacity: 0;
+  width: 0;
+  background-color: $indian-yellow;
+  margin-bottom: 0.5rem;
+  transition: opacity 640ms 345ms, width 640ms 365ms;
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.bullet-list-wrap ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.bullet-list-wrap li {
+  padding: 1.5rem 0 1.5rem 1rem;
+  font-weight: 600;
+  color: $granite-gray;
+  font-size: 0.9rem;
+  border-top: 1px solid rgba(163,163,163,0.5);
+  opacity: 0;
+  transform: translateX(100px);
+  transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.bullet-list-wrap li:last-child {
+  padding-bottom: 0;
 }
 
 .the-bottom-line .wrap {
@@ -219,45 +276,6 @@
 
   // animation order
 
-  .bullet-list-wrap h3 {
-    color: $granite-gray;
-    padding-left: 1rem;
-    margin-bottom: 1.5rem;
-    opacity: 0;
-    transform: translateX(100px);
-    transition: opacity 600ms, transform 600ms 80ms;
-    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  }
-
-  .bullet-list-wrap h3:before {
-    content: '';
-    display: block;
-    height: 1px;
-    opacity: 0;
-    width: 0;
-    background-color: $indian-yellow;
-    margin-bottom: 0.5rem;
-    transition: opacity 640ms 345ms, width 640ms 365ms;
-    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  }
-
-  .bullet-list-wrap ul {
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-  }
-
-  .bullet-list-wrap li {
-    padding: 1.5rem 0 1.5rem 1rem;
-    font-weight: 600;
-    color: $granite-gray;
-    font-size: 0.9rem;
-    border-top: 1px solid rgba(163,163,163,0.5);
-    opacity: 0;
-    transform: translateX(100px);
-    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  }
-
   .bullet-list-wrap ul li:nth-of-type(1) {
     transition: transform 640ms 808ms, opacity 640ms 808ms;
   }
@@ -276,6 +294,9 @@
 
   .product-image {
     opacity: 0;
+    transform: translateX(100px);
+    transition: transform 640ms 675ms, opacity 640ms 830ms;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   }
 
   .product-background-image {
@@ -285,6 +306,9 @@
     top: 100px;
     left: 0;
     opacity: 0;
+    transform: translateY(-100px);
+    transition: transform 640ms 152ms, opacity 640ms 263ms;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
   }
 
 }
@@ -301,6 +325,8 @@
 
 .product.active {
 
+  // animation order
+
   .bullet-list-wrap h3 {
     opacity: 1;
     transform: translateX(0);
@@ -314,6 +340,161 @@
   .bullet-list-wrap li {
     opacity: 1;
     transform: translateX(0)
+  }
+
+  .product-background-image {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .product-image {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+.reliable-construction {
+
+  .bullets-layer {
+    top: 100px;
+  }
+
+  // animation order
+
+  .bullet-list-wrap {
+    transform: translateY(100px);
+  }
+
+  .bullet-list-wrap h3 {
+    transition: opacity 600ms 250ms, transform 600ms 360ms;
+  }
+
+  .bullet-list-wrap h3:before {
+    transition: opacity 640ms 745ms, width 640ms 860ms;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(1) {
+    transition: transform 640ms 988ms, opacity 640ms 988ms;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(2) {
+    transition: transform 640ms 1.13s, opacity 640ms 1.13s;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(3) {
+    transition: transform 640ms 1.25s, opacity 640ms 1.25s;
+  }
+
+}
+
+.reliable-construction.active {
+
+  // animation order
+
+  .bullet-list-wrap {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .bullet-list-wrap h3 {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bullet-list-wrap h3:before {
+    opacity: 1;
+    width: 3rem;
+  }
+
+  .bullet-list-wrap li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+.power {
+
+  top: -900px;
+
+  .wrap {
+    position: relative;
+    height: 675px;
+    width: 500px;
+    margin-left: 40px;
+  }
+
+  .bullet-list-wrap {
+    position: absolute;
+    z-index: 2;
+    max-width: 300px;
+    right: -100px;
+    bottom: -40px;
+  }
+
+  // animation order
+
+  img {
+    @include box-shadow-all('rgba(44,62,80,.3)');
+    position: absolute;
+    height: 675px;
+    opacity: 0;
+    transform: translateY(-300px);
+    transition: opacity 600ms, transform 600ms;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+
+  .bullet-list-wrap {
+    transform: translateX(200px);
+    transition: transform 600ms 480ms, opacity 600ms 565ms;
+  }
+
+  .bullet-list-wrap h3 {
+    transition: opacity 600ms 1.05s, transform 600ms 1.08s;
+  }
+
+  .bullet-list-wrap h3:before {
+    transition: opacity 640ms 1.56s, width 640ms 1.60s;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(1) {
+    transition: transform 640ms 1.92s, opacity 640ms 1.92s;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(2) {
+    transition: transform 640ms 2.07s, opacity 640ms 2.07s;
+  }
+
+}
+
+.power.active {
+
+  // animation order
+
+  img {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .bullet-list-wrap {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bullet-list-wrap h3 {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bullet-list-wrap h3:before {
+    opacity: 1;
+    width: 3rem;
+  }
+
+  .bullet-list-wrap li {
+    opacity: 1;
+    transform: translateX(0);
   }
 
 }

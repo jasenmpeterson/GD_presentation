@@ -28,9 +28,11 @@ function loadPage(slug) {
 // -- page display
 
 function pageDisplay(data) {
+
   $('body').addClass('product-page')
   $('.page-wrap').html(data)
   productScrollMagic()
+
 }
 
 // ScrollMagic -- https://github.com/janpaepke/ScrollMagic
@@ -41,10 +43,11 @@ function productScrollMagic() {
 
   var sceneController = new ScrollMagic.Controller(
     {
-      container: '.parallax',
-      globalSceneOptions: { duration: '200%' }
+      container: '.parallax'
 
     });
+
+  // minimize time
 
   // -- the bottom line scene
 
@@ -60,9 +63,38 @@ function productScrollMagic() {
     triggerElement: '.minimize-time-product'
   })
     .on('enter', function(event) {
-      console.log('wtf')
       if(event.scrollDirection === 'FORWARD') {
         $('.product').addClass('active')
+      }
+    })
+    .addTo(sceneController)
+    .addIndicators()
+
+  // reliable construction
+
+  // -- bullet wrap
+
+  new ScrollMagic.Scene({
+    triggerElement: '.reliable-construction'
+  })
+    .on('enter', function(event) {
+      if(event.scrollDirection === 'FORWARD') {
+        $('.reliable-construction').addClass('active')
+      }
+    })
+    .addTo(sceneController)
+    .addIndicators()
+
+  // reliable construction
+
+  // -- power
+
+  new ScrollMagic.Scene({
+    triggerElement: '.power'
+  })
+    .on('enter', function(event) {
+      if(event.scrollDirection === 'FORWARD') {
+        $('.power').addClass('active');
       }
     })
     .addTo(sceneController)

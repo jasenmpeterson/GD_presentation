@@ -12,6 +12,8 @@
 	// data
 	$pumps = get_field('pumps', $page_id);
 	$minimize_data = $pumps['minimize_time'];
+	$reliable_construction = $pumps['reliable_construction'];
+	$power = $pumps['decisive_power_and_flow'];
 
 ?>
 <div class="product-template parallax">
@@ -87,6 +89,63 @@
 
 	</section>
 
-	<div style="height: 1000px; background-color: red;"></div>
+	<section class="reliable-construction parallax__group">
+
+		<div class="parallax__layer parallax__layer--back bullets-layer">
+			<div class="grid-container">
+				<div class="grid-x align-center-middle">
+					<div class="cell small-12 medium-3">
+						<div class="bullet-list-wrap dark">
+							<h3><?php echo $reliable_construction['bullet_list_title']; ?></h3>
+							<ul>
+								<?php
+
+								foreach( $reliable_construction['bullet_list'] as $bullet):
+
+									echo '<li>'.$bullet['bullet'].'</li>';
+
+								endforeach;
+
+								?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<!--/reliable-construction-->
+
+	<section class="power parallax__group">
+
+		<div class="parallax__layer parallax__layer--base bullets-layer">
+			<div class="grid-x align-middle align-right">
+				<div class="cell small-12 medium-5">
+					<div class="wrap">
+						<img src="<?php echo $power['background_image'] ;?>" alt="">
+						<div class="bullet-list-wrap dark">
+							<h3><?php echo $power['bullet_list_title']; ?></h3>
+							<ul>
+								<?php
+
+								foreach( $power['bullet_list'] as $bullet):
+
+									echo '<li>'.$bullet['bullet'].'</li>';
+
+								endforeach;
+
+								?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<!--/reliable-construction-->
+
+	<section style="height: 1000px;"></section>
 
 </div>
