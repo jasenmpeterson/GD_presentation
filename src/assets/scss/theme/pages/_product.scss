@@ -1,3 +1,6 @@
+// TODO - Scroll Down Animation
+
+
 .product-page .top-bar ul {
   margin-right: 5rem;
 }
@@ -416,8 +419,6 @@
 
 .power {
 
-  top: -900px;
-
   .wrap {
     position: relative;
     height: 675px;
@@ -493,6 +494,204 @@
   }
 
   .bullet-list-wrap li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+.smallest-footprint {
+
+  .grid-x {
+    height: 100%;
+  }
+
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: -1000px 0 !important;
+
+  // animation order
+
+  .bullet-list-wrap h3 {
+    transition: opacity 600ms, transform 310ms 34ms;
+  }
+
+  .bullet-list-wrap h3:before {
+    transition: opacity 640ms 275ms, width 640ms 1.60s;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(1) {
+    transition: transform 640ms 440ms, opacity 640ms 440ms;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(2) {
+    transition: transform 640ms 645ms, opacity 640ms 645ms;
+  }
+
+}
+
+.smallest-footprint.active {
+
+  .bullet-list-wrap {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bullet-list-wrap h3 {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bullet-list-wrap h3:before {
+    opacity: 1;
+    width: 3rem;
+  }
+
+  .bullet-list-wrap li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+.smoothest-operating {
+
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  height: 300px;
+
+    // animation order
+
+  .bullet-list-wrap {
+    transform: translateY(100px);
+  }
+
+  .bullet-list-wrap h3 {
+    transition: opacity 600ms 250ms, transform 600ms 360ms;
+  }
+
+  .bullet-list-wrap h3:before {
+    transition: opacity 640ms 745ms, width 640ms 860ms;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(1) {
+    transition: transform 640ms 988ms, opacity 640ms 988ms;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(2) {
+    transition: transform 640ms 1.13s, opacity 640ms 1.13s;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(3) {
+    transition: transform 640ms 1.25s, opacity 640ms 1.25s;
+  }
+
+}
+
+.smoothest-operating.active {
+
+  .bullet-list-wrap {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bullet-list-wrap h3 {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bullet-list-wrap h3:before {
+    opacity: 1;
+    width: 3rem;
+  }
+
+  .bullet-list-wrap li {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+.designs {
+
+  // animation order
+
+  .bullet-list-wrap h3 {
+    transition: opacity 600ms, transform 600ms 80ms;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+
+  .bullet-list-wrap h3:before {
+    transition: opacity 640ms 345ms, width 640ms 365ms;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(1) {
+    transition: transform 640ms 808ms, opacity 640ms 808ms;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(2) {
+    transition: transform 640ms 998ms, opacity 640ms 998ms;
+  }
+
+  .bullet-list-wrap ul li:nth-of-type(3) {
+    transition: transform 640ms 1.15s, opacity 640ms 1.15s;
+  }
+
+  .image-wrap {
+    position: relative;
+  }
+
+  .product-image {
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 640ms 675ms, opacity 640ms 830ms;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .product-background-image {
+    @include box-shadow-all('rgba(44,62,80,.3)');
+    position: absolute;
+    top: 100px;
+    left: 0;
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: transform 640ms 152ms, opacity 640ms 263ms;
+    transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+
+}
+
+.designs.active {
+
+  // animation order
+
+  .bullet-list-wrap h3 {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .bullet-list-wrap h3:before {
+    opacity: 1;
+    width: 3rem;
+  }
+
+  .bullet-list-wrap li {
+    opacity: 1;
+    transform: translateX(0)
+  }
+
+  .product-background-image {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .product-image {
     opacity: 1;
     transform: translateX(0);
   }

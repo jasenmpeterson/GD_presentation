@@ -72,8 +72,6 @@ function productScrollMagic() {
 
   // reliable construction
 
-  // -- bullet wrap
-
   new ScrollMagic.Scene({
     triggerElement: '.reliable-construction'
   })
@@ -85,12 +83,11 @@ function productScrollMagic() {
     .addTo(sceneController)
     .addIndicators()
 
-  // reliable construction
-
-  // -- power
+  // power
 
   new ScrollMagic.Scene({
-    triggerElement: '.power'
+    triggerElement: '.power',
+    offset: 300
   })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
@@ -99,6 +96,51 @@ function productScrollMagic() {
     })
     .addTo(sceneController)
     .addIndicators()
+
+  // footprint
+
+  new ScrollMagic.Scene({
+    triggerElement: '.smallest-footprint',
+    offset: 300
+  })
+    .on('enter', function(event) {
+      if(event.scrollDirection === 'FORWARD') {
+        $('.smallest-footprint').addClass('active');
+      }
+    })
+    .addTo(sceneController)
+    .addIndicators()
+
+  // smooth operating
+
+  new ScrollMagic.Scene({
+    triggerElement: '.smoothest-operating',
+    offset: 300
+  })
+    .on('enter', function(event) {
+      if(event.scrollDirection === 'FORWARD') {
+        $('.smoothest-operating').addClass('active');
+      }
+    })
+    .addTo(sceneController)
+    .addIndicators()
+
+  // designs
+
+  // smooth operating
+
+  new ScrollMagic.Scene({
+    triggerElement: '.designs',
+    offset: 300
+  })
+    .on('enter', function(event) {
+      if(event.scrollDirection === 'FORWARD') {
+        $('.designs').addClass('active');
+      }
+    })
+    .addTo(sceneController)
+    .addIndicators()
+
 
 }
 

@@ -92,6 +92,17 @@ div.wipe.active {
   transform-style: preserve-3d;
 }
 
+.parallax__group:not(.background) {
+  z-index: 2;
+}
+
+.background-image {
+  -webkit-background-size: cover !important;
+  background-size: cover !important;
+  height: 550px;
+  background-position: center center !important;
+}
+
 h1,
 h2,
 h3 {

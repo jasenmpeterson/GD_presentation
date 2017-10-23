@@ -14,6 +14,12 @@
 	$minimize_data = $pumps['minimize_time'];
 	$reliable_construction = $pumps['reliable_construction'];
 	$power = $pumps['decisive_power_and_flow'];
+	$background = $pumps['background'];
+	$footprint = $pumps['smallest_footprint'];
+	$smoothest_operating = $pumps['smoothest_operating'];
+	$designs = $pumps['modules']['multiple_design_configurations'];
+
+	// TODO - Section Titles
 
 ?>
 <div class="product-template parallax">
@@ -117,6 +123,8 @@
 	</section>
 	<!--/reliable-construction-->
 
+	<!-- TODO - need to slow this down -->
+
 	<section class="power parallax__group">
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
@@ -144,8 +152,113 @@
 		</div>
 
 	</section>
-	<!--/reliable-construction-->
+	<!--/power-->
 
-	<section style="height: 1000px;"></section>
+	<section class="background background-one parallax__group">
+		<div class="parallax__layer parallax__layer--back">
+			<div class="background-image" style="background: url('<?php echo $background; ?>')"></div>
+		</div>
+	</section>
+	<!--/background-->
+
+	<section class="smallest-footprint parallax__group" style="background:url('<?php echo $footprint['image'] ;?>')">
+
+		<div class="parallax__layer parallax__layer--base">
+			<div class="grid-x align-middle align-center">
+				<div class="cell small-12 medium-2">
+					<div class="wrap">
+						<div class="bullet-list-wrap">
+							<h3><?php echo $footprint['bullet_list_title']; ?></h3>
+							<ul>
+								<?php
+
+								foreach( $footprint['bullet_list'] as $bullet):
+
+									echo '<li>'.$bullet['bullet'].'</li>';
+
+								endforeach;
+
+								?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<!--/smallest footprint-->
+
+	<section class="smoothest-operating parallax__group">
+
+		<div class="parallax__layer parallax__layer--base">
+			<div class="grid-x align-middle align-center">
+				<div class="cell small-12 medium-2">
+					<div class="wrap">
+						<div class="bullet-list-wrap dark">
+							<h3><?php echo $smoothest_operating['bullet_list_title']; ?></h3>
+							<ul>
+								<?php
+
+								foreach( $smoothest_operating['bullet_list'] as $bullet):
+
+									echo '<li>'.$bullet['bullet'].'</li>';
+
+								endforeach;
+
+								?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</section>
+	<!--/smooth operating-->
+
+	<section class="background background-two parallax__group">
+		<div class="parallax__layer parallax__layer--back">
+			<div class="background-image" style="background: url('<?php echo $smoothest_operating['background_image']; ?>')"></div>
+		</div>
+	</section>
+	<!--/background-->
+
+	<section class="designs parallax__group">
+
+		<div class="parallax__layer parallax__layer--back">
+
+			<div class="grid-container">
+				<div class="grid-x align-center-middle">
+					<div class="cell small-12 medium-8">
+						<div class="image-wrap">
+							<img src="<?php echo $designs['product_image']; ?>" alt="" class="product-image">
+							<img src="<?php echo $designs['product_background_image']; ?>" alt="" class="product-background-image">
+						</div>
+					</div>
+					<div class="auto cell">
+						<div class="bullet-list-wrap">
+							<h3><?php echo $designs['bullet_list_title']; ?></h3>
+							<ul>
+								<?php
+
+								foreach( $designs['bullet_list'] as $bullet):
+
+									echo '<li>'.$bullet['bullet'].'</li>';
+
+								endforeach;
+
+								?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<!--/minimize-time-product-->
+
+	</section>
 
 </div>
