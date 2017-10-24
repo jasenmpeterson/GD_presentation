@@ -1,3 +1,23 @@
-.footer-container {
-  border-top: none;
+.footer {
+  background-color: #000;
+  max-width: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: #fff;
+  font-size: 0.8rem;
+
+  .grid-x {
+    width: 100%;
+  }
+
+  .copyright {
+    display: block;
+    padding-right: 3rem;
+  }
+
+}
+
+.product-page .footer .logo-wrap {
+  background-color: transparent;
 }

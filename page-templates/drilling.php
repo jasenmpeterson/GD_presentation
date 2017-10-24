@@ -18,6 +18,11 @@
 	$footprint = $pumps['smallest_footprint'];
 	$smoothest_operating = $pumps['smoothest_operating'];
 	$designs = $pumps['modules']['multiple_design_configurations'];
+	$modules_bullet_list = $pumps['modules']['bullet_list'];
+	$modules_bullet_list_b = $pumps['modules']['bullet_list_b'];
+	$modules_product_image = $pumps['modules']['product_image'];
+	$modules_product_image_b = $pumps['modules']['product_image_b'];
+	$modules_background_image = $pumps['modules']['background_image'];
 
 	// TODO - Section Titles
 
@@ -225,9 +230,9 @@
 	</section>
 	<!--/background-->
 
-	<section class="designs parallax__group">
+	<section class="parallax__group">
 
-		<div class="parallax__layer parallax__layer--back">
+		<div class="parallax__layer parallax__layer--back designs">
 
 			<div class="grid-container">
 				<div class="grid-x align-center-middle">
@@ -257,8 +262,74 @@
 			</div>
 
 		</div>
-		<!--/minimize-time-product-->
+		<!--/designs-->
 
 	</section>
 
+	<section class="parallax__group">
+
+		<div class="parallax__layer parallax__layer--base modules-bullet-list">
+
+			<div class="grid-container">
+				<div class="grid-x align-center-middle">
+					<div class="auto cell">
+						<div class="bullet-list-wrap">
+							<ul>
+								<?php
+
+								foreach( $modules_bullet_list as $bullet):
+
+									echo '<li>'.$bullet['bullet'].'</li>';
+
+								endforeach;
+
+								?>
+							</ul>
+						</div>
+					</div>
+					<div class="cell small-12 medium-8">
+						<div class="image-wrap">
+							<img src="<?php echo $modules_product_image_b; ?>" alt="" class="product-image">
+							<img src="<?php echo $modules_background_image; ?>" alt="" class="product-background-image">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+	<!--/bullet list-->
+
+	<section class="bullet-list-b parallax__group" style="background:url('<?php echo $modules_product_image ;?>')">
+
+		<div class="parallax__layer parallax__layer--base">
+			<div class="grid-x align-middle align-center">
+				<div class="cell small-12 medium-6">
+					<div class="wrap">
+						<div class="bullet-list-wrap">
+							<ul>
+								<?php
+
+								foreach( $modules_bullet_list_b as $bullet):
+
+									echo '<li>'.$bullet['bullet'].'</li>';
+
+								endforeach;
+
+								?>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<!--/bullet list b-->
+
 </div>
+
+<?php
+
+get_template_part( 'template-parts/footer' );

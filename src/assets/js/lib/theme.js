@@ -127,8 +127,6 @@ function productScrollMagic() {
 
   // designs
 
-  // smooth operating
-
   new ScrollMagic.Scene({
     triggerElement: '.designs',
     offset: 300
@@ -140,6 +138,35 @@ function productScrollMagic() {
     })
     .addTo(sceneController)
     .addIndicators()
+
+  // module bullet list
+
+  new ScrollMagic.Scene({
+    triggerElement: '.modules-bullet-list',
+    offset: 300
+  })
+    .on('enter', function(event) {
+      if(event.scrollDirection === 'FORWARD') {
+        $('.modules-bullet-list').addClass('active');
+      }
+    })
+    .addTo(sceneController)
+    .addIndicators()
+
+  // module bullet list b
+
+  new ScrollMagic.Scene({
+    triggerElement: '.bullet-list-b',
+    offset: 300
+  })
+    .on('enter', function(event) {
+      if(event.scrollDirection === 'FORWARD') {
+        $('.bullet-list-b').addClass('active');
+      }
+    })
+    .addTo(sceneController)
+    .addIndicators()
+
 
 
 }
