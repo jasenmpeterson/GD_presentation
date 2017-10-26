@@ -1041,8 +1041,137 @@
 
 .background-one,
 .background-two {
+  background-position: center center !important;
   @media screen and (min-width: 20rem) {
     height: 200px;
     min-height: 0;
   }
+}
+
+.fracking {
+
+  .power {
+
+    margin: 5rem 0;
+
+    .wrap {
+      position: relative;
+      height: 675px;
+      width: 500px;
+      margin-left: 40px;
+    }
+
+    .bullet-list-wrap {
+      position: absolute;
+      z-index: 2;
+      width: 80%;
+      bottom: -40px;
+    }
+
+    // animation order
+
+    .bullet-list-wrap {
+      transform: translateX(200px);
+      transition: transform 600ms, opacity 600ms 115ms;
+    }
+
+    .bullet-list-wrap h3 {
+      transition: opacity 600ms 275ms, transform 600ms 335ms;
+    }
+
+    .bullet-list-wrap h3:before {
+      transition: opacity 640ms 610ms, width 640ms 690ms;
+    }
+
+    .bullet-list-wrap ul li:nth-of-type(1) {
+      transition: transform 640ms 1.08s, opacity 640ms 1.08s;
+    }
+
+    .bullet-list-wrap ul li:nth-of-type(2) {
+      transition: transform 640ms 1.30s, opacity 640ms 1.30s;
+    }
+
+    .bullet-list-wrap ul li:nth-of-type(3) {
+      transition: transform 640ms 1.56s, opacity 640ms 1.56s;
+    }
+
+  }
+
+  .power.active {
+
+    // animation order
+
+    img {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .bullet-list-wrap {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .bullet-list-wrap h3 {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .bullet-list-wrap h3:before {
+      opacity: 1;
+      width: 3rem;
+    }
+
+    .bullet-list-wrap li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+  }
+
+  .smallest-footprint {
+
+    @media screen and (min-width: 90rem) {
+      background-position: 145% 100% !important;
+      background-size: 900px !important
+    }
+
+
+    .bullet-list-wrap h3 {
+      transition: opacity 600ms, transform 310ms 34ms;
+    }
+
+    .bullet-list-wrap h3:before {
+      transition: opacity 640ms 275ms, width 640ms 1.60s;
+    }
+
+    .bullet-list-wrap ul li:nth-of-type(1) {
+      transition: transform 640ms 440ms, opacity 640ms 440ms;
+    }
+
+    .bullet-list-wrap ul li:nth-of-type(2) {
+      transition: transform 640ms 645ms, opacity 640ms 645ms;
+    }
+
+    .bullet-list-wrap ul li:nth-of-type(3) {
+      transition: transform 640ms 850ms, opacity 640ms 850ms;
+    }
+
+  }
+
+  .smoothest-operating {
+
+    -webkit-background-size: cover !important;
+    background-size: cover !important;
+    display: flex;
+
+    .grid-x {
+      height: 100%;
+    }
+
+    .parallax__layer--base {
+      width: 100%;
+    }
+
+  }
+
 }

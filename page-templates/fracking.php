@@ -10,25 +10,25 @@ get_template_part( 'template-parts/header' );
 $page_id = get_queried_object_id();
 
 // data
-$pumps = get_field('pumps', $page_id);
-$minimize_data = $pumps['minimize_time'];
-$reliable_construction = $pumps['reliable_construction'];
-$power = $pumps['decisive_power_and_flow'];
-$background = $pumps['background'];
-$footprint = $pumps['smallest_footprint'];
-$smoothest_operating = $pumps['smoothest_operating'];
-$designs = $pumps['modules']['multiple_design_configurations'];
-$modules_bullet_list = $pumps['modules']['bullet_list'];
-$modules_bullet_list_b = $pumps['modules']['bullet_list_b'];
-$modules_product_image = $pumps['modules']['product_image'];
-$modules_product_image_b = $pumps['modules']['product_image_b'];
-$modules_background_image = $pumps['modules']['background_image'];
+$fracking = get_field('fracking', $page_id);
+$minimize_data = $fracking['minimize_time'];
+$reliable_construction = $fracking['reliable_construction'];
+$power = $fracking['power'];
+$background = $fracking['background_image'];
+$agma = $fracking['agma'];
+$thunder = $fracking['thunder'];
+$designs = $fracking['modules']['multiple_design_configurations'];
+$modules_bullet_list = $fracking['modules']['bullet_list'];
+$modules_bullet_list_b = $fracking['modules']['bullet_list_b'];
+$modules_product_image = $fracking['modules']['product_image'];
+$modules_product_image_b = $fracking['modules']['product_image_b'];
+$modules_background_image = $fracking['modules']['background_image'];
 
 // TODO - Section Titles
 // TODO - Fade in Design Bullet Modules
 
 ?>
-<div class="product-template parallax">
+<div class="product-template parallax fracking">
 
 	<section class="minimize-time parallax__group">
 
@@ -101,23 +101,21 @@ $modules_background_image = $pumps['modules']['background_image'];
 	<section class="reliable-construction parallax__group">
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
-			<div class="grid-container">
-				<div class="grid-x align-center-middle">
-					<div class="cell small-12 medium-8 large-5">
-						<div class="bullet-list-wrap dark">
-							<h3><?php echo $reliable_construction['bullet_list_title']; ?></h3>
-							<ul>
-								<?php
+			<div class="grid-x align-middle align-center">
+				<div class="cell small-12 medium-3">
+					<div class="bullet-list-wrap dark">
+						<h3><?php echo $reliable_construction['bullet_list_title']; ?></h3>
+						<ul>
+							<?php
 
-								foreach( $reliable_construction['bullet_list'] as $bullet):
+							foreach( $reliable_construction['bullet_list'] as $bullet):
 
-									echo '<li>'.$bullet['bullet'].'</li>';
+								echo '<li>'.$bullet['bullet'].'</li>';
 
-								endforeach;
+							endforeach;
 
-								?>
-							</ul>
-						</div>
+							?>
+						</ul>
 					</div>
 				</div>
 			</div>
@@ -131,10 +129,10 @@ $modules_background_image = $pumps['modules']['background_image'];
 	<section class="power parallax__group">
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
-			<div class="grid-x align-middle">
+			<div class="grid-x align-middle align-right">
 				<div class="cell small-12 medium-5">
 					<div class="wrap">
-						<img src="<?php echo $power['background_image'] ;?>" alt="">
+						<img src="<?php echo $power['product_background_image']; ?>" alt="" class="product-background-image"/>
 						<div class="bullet-list-wrap dark">
 							<h3><?php echo $power['bullet_list_title']; ?></h3>
 							<ul>
@@ -164,18 +162,18 @@ $modules_background_image = $pumps['modules']['background_image'];
 	</section>
 	<!--/background-->
 
-	<section class="smallest-footprint parallax__group" style="background:url('<?php echo $footprint['image'] ;?>')">
+	<section class="smallest-footprint parallax__group" style="background: url('<?php echo $agma['image']; ?>')">
 
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-center">
-				<div class="cell small-12 medium-8 large-4">
+				<div class="cell small-12 medium-4 large-3">
 					<div class="wrap">
 						<div class="bullet-list-wrap">
-							<h3><?php echo $footprint['bullet_list_title']; ?></h3>
+							<h3><?php echo $agma['bullet_list_title']; ?></h3>
 							<ul>
 								<?php
 
-								foreach( $footprint['bullet_list'] as $bullet):
+								foreach( $agma['bullet_list'] as $bullet):
 
 									echo '<li>'.$bullet['bullet'].'</li>';
 
@@ -192,18 +190,18 @@ $modules_background_image = $pumps['modules']['background_image'];
 	</section>
 	<!--/smallest footprint-->
 
-	<section class="smoothest-operating parallax__group">
+	<section class="smoothest-operating parallax__group" style="background: url('<?php echo $thunder['background_image']; ?>')">
 
-		<div class="parallax__layer parallax__layer--back">
+		<div class="parallax__layer parallax__layer--base">
 			<div class="grid-x align-middle align-center">
 				<div class="cell small-12 medium-8 large-4">
 					<div class="wrap">
 						<div class="bullet-list-wrap dark">
-							<h3><?php echo $smoothest_operating['bullet_list_title']; ?></h3>
+							<h3><?php echo $thunder['bullet_list_title']; ?></h3>
 							<ul>
 								<?php
 
-								foreach( $smoothest_operating['bullet_list'] as $bullet):
+								foreach( $thunder['bullet_list'] as $bullet):
 
 									echo '<li>'.$bullet['bullet'].'</li>';
 
@@ -220,13 +218,6 @@ $modules_background_image = $pumps['modules']['background_image'];
 
 	</section>
 	<!--/smooth operating-->
-
-	<section class="background background-two parallax__group">
-		<div class="parallax__layer parallax__layer--base">
-			<div class="background-image" style="background: url('<?php echo $smoothest_operating['background_image']; ?>')"></div>
-		</div>
-	</section>
-	<!--/background-->
 
 	<section class="parallax__group">
 
