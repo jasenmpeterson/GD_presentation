@@ -86,8 +86,7 @@ function productScrollMagic() {
   // power
 
   new ScrollMagic.Scene({
-    triggerElement: '.power',
-    offset: 300
+    triggerElement: '.power'
   })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
@@ -100,8 +99,7 @@ function productScrollMagic() {
   // footprint
 
   new ScrollMagic.Scene({
-    triggerElement: '.smallest-footprint',
-    offset: 300
+    triggerElement: '.smallest-footprint'
   })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
@@ -115,7 +113,7 @@ function productScrollMagic() {
 
   new ScrollMagic.Scene({
     triggerElement: '.smoothest-operating',
-    offset: 300
+    offset: -300
   })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
@@ -128,8 +126,7 @@ function productScrollMagic() {
   // designs
 
   new ScrollMagic.Scene({
-    triggerElement: '.designs',
-    offset: 300
+    triggerElement: '.designs'
   })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
@@ -142,8 +139,7 @@ function productScrollMagic() {
   // module bullet list
 
   new ScrollMagic.Scene({
-    triggerElement: '.modules-bullet-list',
-    offset: 300
+    triggerElement: '.modules-bullet-list'
   })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
@@ -156,8 +152,7 @@ function productScrollMagic() {
   // module bullet list b
 
   new ScrollMagic.Scene({
-    triggerElement: '.bullet-list-b',
-    offset: 300
+    triggerElement: '.bullet-list-b'
   })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
@@ -166,8 +161,5 @@ function productScrollMagic() {
     })
     .addTo(sceneController)
     .addIndicators()
-
-
-
 }
 

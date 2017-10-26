@@ -4,7 +4,6 @@ body {
 }
 
 body {
-  overflow-x: hidden;
   background-color: $white-smoke;
 }
 
@@ -70,13 +69,13 @@ div.wipe.active {
   scroll-behavior: smooth;
 }
 
-.parallax__layer {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-}
+//.parallax__layer {
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//  bottom: 0;
+//  left: 0;
+//}
 
 .parallax__layer--base {
   transform: translateZ(0);
@@ -88,8 +87,9 @@ div.wipe.active {
 
 .parallax__group {
   position: relative;
-  height: 100vh;
+  min-height: 500px;
   transform-style: preserve-3d;
+  margin: 15rem 0;
 }
 
 .parallax__group:not(.background) {
@@ -99,7 +99,7 @@ div.wipe.active {
 .background-image {
   -webkit-background-size: cover !important;
   background-size: cover !important;
-  height: 550px;
+  height: 500px;
   background-position: center center !important;
 }
 

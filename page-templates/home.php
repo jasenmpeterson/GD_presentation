@@ -2,6 +2,7 @@
 /*
 Template Name: Home
 */
+// TODO - Move buttons closer together.
 
 // page id
 $page_id = get_queried_object_id();

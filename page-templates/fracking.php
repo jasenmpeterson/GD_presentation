@@ -1,31 +1,31 @@
 <?php
 
-	/*
-	Template Name: Drilling
-	*/
+/*
+  Template Name: Fracking
+  */
 
-	get_template_part( 'template-parts/header' );
+get_template_part( 'template-parts/header' );
 
-	// page id
-	$page_id = get_queried_object_id();
+// page id
+$page_id = get_queried_object_id();
 
-	// data
-	$pumps = get_field('pumps', $page_id);
-	$minimize_data = $pumps['minimize_time'];
-	$reliable_construction = $pumps['reliable_construction'];
-	$power = $pumps['decisive_power_and_flow'];
-	$background = $pumps['background'];
-	$footprint = $pumps['smallest_footprint'];
-	$smoothest_operating = $pumps['smoothest_operating'];
-	$designs = $pumps['modules']['multiple_design_configurations'];
-	$modules_bullet_list = $pumps['modules']['bullet_list'];
-	$modules_bullet_list_b = $pumps['modules']['bullet_list_b'];
-	$modules_product_image = $pumps['modules']['product_image'];
-	$modules_product_image_b = $pumps['modules']['product_image_b'];
-	$modules_background_image = $pumps['modules']['background_image'];
+// data
+$pumps = get_field('pumps', $page_id);
+$minimize_data = $pumps['minimize_time'];
+$reliable_construction = $pumps['reliable_construction'];
+$power = $pumps['decisive_power_and_flow'];
+$background = $pumps['background'];
+$footprint = $pumps['smallest_footprint'];
+$smoothest_operating = $pumps['smoothest_operating'];
+$designs = $pumps['modules']['multiple_design_configurations'];
+$modules_bullet_list = $pumps['modules']['bullet_list'];
+$modules_bullet_list_b = $pumps['modules']['bullet_list_b'];
+$modules_product_image = $pumps['modules']['product_image'];
+$modules_product_image_b = $pumps['modules']['product_image_b'];
+$modules_background_image = $pumps['modules']['background_image'];
 
-	// TODO - Section Titles
-	// TODO - Fade in Design Bullet Modules
+// TODO - Section Titles
+// TODO - Fade in Design Bullet Modules
 
 ?>
 <div class="product-template parallax">
@@ -324,9 +324,9 @@
 	</section>
 	<!--/bullet list b-->
 
-<?php
-get_template_part( 'template-parts/footer' );
-?>
+	<?php
+	get_template_part( 'template-parts/footer' );
+	?>
 
 </div>
 

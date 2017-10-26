@@ -1,12 +1,113 @@
 // TODO - Scroll Down Animation
 
+.product-template {
+  position: relative;
+}
+
+.parallax-nav {
+
+  position: fixed;
+  top: 250px;
+  right: 5rem;
+
+  @media screen and (min-width: 20rem) {
+    display: none;
+  }
+  @media screen and (min-width: 64rem) {
+    display: block;
+  }
+}
+
+.parallax-nav .wrap {
+  display: flex;
+  padding: 5rem 0;
+  position: relative
+}
+
+.parallax-nav .wrap span {
+  display: block;
+  line-height: 2;
+  width: 200px;
+  text-align: right;
+}
+
+.parallax-nav h5 {
+  color: $maroon;
+  transform: rotate(-90deg);
+  position: absolute;
+  top: 0;
+  right: -1.5rem;
+  margin: 0;
+  line-height: normal;
+}
+
+.parallax-nav .wrap:last-of-type h5 {
+  right: -2rem;
+}
+
+.parallax-nav .labels span {
+  font-size: 0.8rem;
+  color: $quick-silver;
+  padding-right: 1.5rem;
+}
+
+.parallax-nav .labels span.active {
+  color: $maroon;
+  font-weight: 700;
+}
+
+.indicators-wrap {
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: $timberwolf;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+
+
+}
+
+.parallax-nav .indicators span {
+
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: $timberwolf;
+  position: relative;
+  z-index: 2;
+}
+
+.parallax-nav .indicators span.active {
+  background-color: $indian-yellow;
+  border: 3px solid $maroon;
+}
 
 .product-page .top-bar ul {
   margin-right: 5rem;
+  @media screen and (min-width: 40rem) {
+    margin-right: 2.5rem;
+  }
 }
 
 .desktop-menu li:not(:last-child) {
   margin-right: 4rem;
+  @media screen and (min-width: 40rem) {
+    margin-right: 1.5rem;
+  }
 }
 
 .dropdown.menu .is-active > a {
@@ -26,13 +127,8 @@
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
   outline: 1px solid;
   outline-color: rgba(255, 255, 255, .5);
-
-  @media only screen and (max-width: 50rem) {
-    font-size: .7rem;
-  }
-
-  @media only screen and (max-width: 39.94rem) {
-    margin: 1.2rem 0;
+  @media screen and (min-width: 40rem) {
+    width: 6.5rem;
   }
 
 }
@@ -45,7 +141,7 @@
   animation-fill-mode: forwards;
 }
 
-.drilling a {
+.is-active a {
   box-shadow: inset 0 0 20px rgba(255, 255, 255, .2), 0 0 20px rgba(255, 255, 255, .2);
   outline: 0 !important;
   border: 2px solid $indian-yellow !important;
@@ -73,6 +169,10 @@
     margin-left: auto;
     padding: 1rem 0;
     margin-right: 5rem;
+
+    @media screen and (min-width: 20rem) {
+      margin-right: 1.5rem;
+    }
   }
 
   a {
@@ -110,6 +210,9 @@
   background-color: $usc-cardinal;
   opacty: 0;
   transition: all 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  @media screen and (min-width: 20rem) {
+    display: none;
+  }
 }
 
 .scroll-down-icon {
@@ -182,21 +285,29 @@
   padding: 1.5rem 0 1.5rem 1rem;
   font-weight: 600;
   color: $granite-gray;
-  font-size: 0.9rem;
   border-top: 1px solid rgba(163,163,163,0.5);
   opacity: 0;
   transform: translateX(100px);
   transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  @media screen and (min-width: 20rem) {
+   font-size: 0.7rem;
+  }
+  @media screen and (min-width: 40rem) {
+    font-size: 0.9rem;
+  }
 }
 
 .bullet-list-wrap li:last-child {
   padding-bottom: 0;
 }
 
+.minimize-time {
+  margin-top: 0;
+}
+
 .the-bottom-line .wrap {
 
   position: relative;
-  margin: 5rem 0;
 
   .line {
     position: absolute;
@@ -226,6 +337,12 @@
     transform: translateX(150px);
     transition: opacity 0.92s 1.06s, transform 0.92s 1.13s;
     transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    @media screen and (min-width: 40rem) {
+      font-size: 2.2rem;
+    }
+    @media screen and (min-width: 80rem) {
+      font-size: 3rem;
+    }
   }
 
   .text-wrap h1 strong {
@@ -358,12 +475,10 @@
 }
 
 .reliable-construction {
-
-  .bullets-layer {
-    top: 100px;
-  }
-
   // animation order
+
+  margin: 0;
+  min-height: 200px;
 
   .bullet-list-wrap {
     transform: translateY(100px);
@@ -419,6 +534,8 @@
 
 .power {
 
+  margin: 5rem 0;
+
   .wrap {
     position: relative;
     height: 675px;
@@ -429,8 +546,7 @@
   .bullet-list-wrap {
     position: absolute;
     z-index: 2;
-    max-width: 300px;
-    right: -100px;
+    width: 80%;
     bottom: -40px;
   }
 
@@ -502,13 +618,20 @@
 
 .smallest-footprint {
 
+  margin-top: 0;
+
   .grid-x {
     height: 100%;
   }
 
-  background-size: cover !important;
+  background-size: 80% !important;
   background-repeat: no-repeat !important;
-  background-position: -1000px 0 !important;
+  background-position: -850px center !important;
+
+  @media screen and (min-width: 40rem) {
+    background-size: 60% !important;
+    background-position: -250px center !important;
+  }
 
   // animation order
 
@@ -558,7 +681,6 @@
 
   background-size: cover !important;
   background-repeat: no-repeat !important;
-  height: 300px;
 
     // animation order
 
@@ -649,9 +771,18 @@
     transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
     position: relative;
     z-index: 2;
-    width: 60%;
+    width: 400px;
     margin: 0 auto;
     display: block;
+    @media screen and (min-width: 20rem) {
+      width: 150px;
+    }
+    @media screen and (min-width: 64rem) {
+      width: 250px;
+    }
+    @media screen and (min-width: 90rem) {
+      width: 350px;
+    }
   }
 
   .product-background-image {
@@ -698,6 +829,27 @@
 
 }
 
+.modules-bullet-list .bullet-list-wrap,
+.bullet-list-b .bullet-list-wrap  {
+
+  padding: 2rem;
+  background-color: $white-smoke;
+  @include box-shadow-all('rgba(44,62,80,.3)');
+
+}
+
+.modules-bullet-list .bullet-list-wrap li,
+.bullet-list-b .bullet-list-wrap li  {
+  font-size: 1.2rem;
+  padding-bottom: 0;
+  &:first-child {
+    padding-top: 0;
+  }
+  @media screen and (min-width: 20rem) {
+    font-size: 0.9rem;
+  }
+}
+
 .modules-bullet-list {
 
   .image-wrap {
@@ -710,28 +862,38 @@
     @include box-shadow-all('rgba(44,62,80,.3)');
     position: absolute;
     top: 100px;
-    left: 0;
+    right: 0;
     opacity: 0;
     transform: translateY(-100px);
     transition: transform 640ms, opacity 640ms 60ms;
     transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    width: 80%;
   }
 
   .product-image {
+
     opacity: 0;
     transform: translateX(100px);
     transition: transform 640ms 260ms, opacity 640ms 320ms;
     transition-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955);
     position: relative;
     z-index: 2;
-    width: 60%;
+    width: 480px;
     margin: 0 auto;
     display: block;
+    @media screen and (min-width: 20rem) {
+      width: 150px;
+    }
+    @media screen and (min-width: 64rem) {
+      width: 250px;
+    }
+    @media screen and (min-width: 90rem) {
+      width: 350px;
+    }
   }
 
   .bullet-list-wrap ul li {
     border-top: none;
-    font-size: 1.5rem;
     transform: translateY(100px);
   }
 
@@ -799,15 +961,19 @@
     height: 100%;
   }
 
-  background-size: 30% !important;
+  background-size: 275px !important;
   background-repeat: no-repeat !important;
   background-position: -250px 0 !important;
+
+  @media screen and (min-width: 64rem) {
+    background-position: -150px 0 !important;
+  }
+
 
   // animation order :
 
   .bullet-list-wrap ul li {
     border-top: none;
-    font-size: 1.5rem;
     transform: translateY(100px);
   }
 
@@ -839,7 +1005,7 @@
   .bullet-list-wrap ul li:nth-of-type(3) {
     transition: transform 640ms 207ms, opacity 640ms 207ms;
     &:before {
-      transition: opacity 640ms 378ms, width 415ms 1.35s;
+      transition: opacity 640ms 378ms, width 415ms 396ms;
     }
   }
 
@@ -867,4 +1033,16 @@
     transform: translateX(0);
   }
 
+}
+
+.background-one {
+  margin: 0;
+}
+
+.background-one,
+.background-two {
+  @media screen and (min-width: 20rem) {
+    height: 200px;
+    min-height: 0;
+  }
 }

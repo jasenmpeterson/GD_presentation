@@ -59,3 +59,6 @@ require_once( 'library/remove-content-editor.php' );
 
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
+
+update_option( 'siteurl', 'http://localhost.gd.presentation:9999/' );
+update_option( 'home', 'http://localhost.gd.presentation:9999/' );
