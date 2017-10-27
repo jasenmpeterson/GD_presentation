@@ -65,7 +65,7 @@
 	</section>
 	<!--/minimize-time-->
 
-	<section class="minimize-time-product parallax__group">
+	<section class="minimize-time-product parallax__group" data-name="minimize-time">
 
 		<div class="product drilling parallax__layer parallax__layer--back">
 
@@ -98,7 +98,7 @@
 
 	</section>
 
-	<section class="reliable-construction parallax__group">
+	<section class="reliable-construction parallax__group" data-name="reliable-construction">
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
 			<div class="grid-container">
@@ -334,16 +334,16 @@ get_template_part( 'template-parts/footer' );
 	<div class="wrap">
 		<h5>Pumps</h5>
 		<div class="labels">
-			<span class="active">Minimize Time</span>
-			<span>Reliable Construction</span>
+			<span data-name="minimize-time">Minimize Time</span>
+			<span data-name="reliable-construction">Reliable Construction</span>
 			<span>Power</span>
 			<span>Footprint</span>
 			<span>Smooth Operating</span>
 		</div>
 		<div class="indicators">
 			<div class="indicators-wrap">
-				<span class="active"></span>
-				<span></span>
+				<span data-name="minimize-time"></span>
+				<span data-name="reliable-construction"></span>
 				<span></span>
 				<span></span>
 				<span></span>

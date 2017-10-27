@@ -19,10 +19,17 @@ $agma = $fracking['agma'];
 $thunder = $fracking['thunder'];
 $designs = $fracking['modules']['multiple_design_configurations'];
 $modules_bullet_list = $fracking['modules']['bullet_list'];
+$modules_bullet_title = $fracking['modules']['bullet_list_title'];
 $modules_bullet_list_b = $fracking['modules']['bullet_list_b'];
+$modules_bullet_title_b = $fracking['modules']['bullet_list_title_b'];
 $modules_product_image = $fracking['modules']['product_image'];
 $modules_product_image_b = $fracking['modules']['product_image_b'];
 $modules_background_image = $fracking['modules']['background_image'];
+$modules_background_image_b = $fracking['modules']['background_image_b'];
+$modules_header = $fracking['modules']['header'];
+$product_image_c = $fracking['modules']['product_image_c'];
+$header_b = $fracking['modules']['header_b'];
+$header_c = $fracking['modules']['header_c'];
 
 // TODO - Section Titles
 // TODO - Fade in Design Bullet Modules
@@ -76,7 +83,7 @@ $modules_background_image = $fracking['modules']['background_image'];
 						<img src="<?php echo $minimize_data['product_background_image']; ?>" alt="" class="product-background-image">
 					</div>
 				</div>
-				<div class="cell small-12 medium-6 large-3">
+				<div class="cell small-12 medium-6 large-4">
 					<div class="bullet-list-wrap">
 						<h3><?php echo $minimize_data['bullet_list_title']; ?></h3>
 						<ul>
@@ -102,7 +109,7 @@ $modules_background_image = $fracking['modules']['background_image'];
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
 			<div class="grid-x align-middle align-center">
-				<div class="cell small-12 medium-3">
+				<div class="cell small-12 medium-6 large-4">
 					<div class="bullet-list-wrap dark">
 						<h3><?php echo $reliable_construction['bullet_list_title']; ?></h3>
 						<ul>
@@ -166,7 +173,7 @@ $modules_background_image = $fracking['modules']['background_image'];
 
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-center">
-				<div class="cell small-12 medium-4 large-3">
+				<div class="cell small-12 medium-6 large-4">
 					<div class="wrap">
 						<div class="bullet-list-wrap">
 							<h3><?php echo $agma['bullet_list_title']; ?></h3>
@@ -194,7 +201,7 @@ $modules_background_image = $fracking['modules']['background_image'];
 
 		<div class="parallax__layer parallax__layer--base">
 			<div class="grid-x align-middle align-center">
-				<div class="cell small-12 medium-8 large-4">
+				<div class="cell small-12 medium-6 large-4">
 					<div class="wrap">
 						<div class="bullet-list-wrap dark">
 							<h3><?php echo $thunder['bullet_list_title']; ?></h3>
@@ -210,7 +217,13 @@ $modules_background_image = $fracking['modules']['background_image'];
 								?>
 							</ul>
 						</div>
+						<div class="bullet-list-wrap header-list-wrap">
+							<h3><?php echo $thunder['header'] ;?></h3>
+						</div>
 					</div>
+				</div>
+				<div class="cell small-12 medium-6 large-4">
+					<img src="<?php echo $thunder['logo']; ?>" alt="" class="thunder-logo">
 				</div>
 			</div>
 		</div>
@@ -219,24 +232,26 @@ $modules_background_image = $fracking['modules']['background_image'];
 	</section>
 	<!--/smooth operating-->
 
-	<section class="parallax__group">
+	<section class="parallax__group reliablity">
 
-		<div class="parallax__layer parallax__layer--back designs">
+		<div class="parallax__layer parallax__layer--base modules-bullet-list">
 
-			<div class="grid-x">
-				<div class="cell small-12 medium-6">
+			<div class="grid-x align-right">
+				<div class="cell small-12 medium-8">
 					<div class="image-wrap">
-						<img src="<?php echo $designs['product_image']; ?>" alt="" class="product-image">
-						<img src="<?php echo $designs['product_background_image']; ?>" alt="" class="product-background-image">
+						<img src="<?php echo $modules_product_image; ?>" alt="" class="product-image">
+						<img src="<?php echo $modules_background_image; ?>" alt="" class="product-background-image">
 					</div>
 				</div>
-				<div class="cell small-12 medium-6 large-3">
-					<div class="bullet-list-wrap">
-						<h3><?php echo $designs['bullet_list_title']; ?></h3>
+			</div>
+			<div class="grid-x">
+				<div class="cell small-12 medium-6 large-5">
+					<div class="bullet-list-wrap dark">
+						<h3><?php echo $modules_bullet_title ;?></h3>
 						<ul>
 							<?php
 
-							foreach( $designs['bullet_list'] as $bullet):
+							foreach( $modules_bullet_list as $bullet):
 
 								echo '<li>'.$bullet['bullet'].'</li>';
 
@@ -249,52 +264,49 @@ $modules_background_image = $fracking['modules']['background_image'];
 			</div>
 
 		</div>
-		<!--/designs-->
 
 	</section>
+	<!--/bullet list-->
 
-	<section class="parallax__group">
+	<section class="bullet-list-b parallax__group">
 
-		<div class="parallax__layer parallax__layer--base modules-bullet-list">
-
-			<div class="grid-container">
-				<div class="grid-x align-center-middle">
-					<div class="cell small-12 medium-6 large-4">
-						<div class="bullet-list-wrap">
-							<ul>
-								<?php
-
-								foreach( $modules_bullet_list as $bullet):
-
-									echo '<li>'.$bullet['bullet'].'</li>';
-
-								endforeach;
-
-								?>
-							</ul>
-						</div>
+		<div class="parallax__layer parallax__layer--back">
+			<div class="grid-x align-right">
+				<div class="cell small-12 medium-8">
+					<div class="image-wrap">
+						<img src="<?php echo $modules_product_image_b; ?>" alt="" class="product-image">
+						<img src="<?php echo $modules_background_image_b; ?>" alt="" class="product-background-image">
 					</div>
-					<div class="cell small-12 medium-8">
-						<div class="image-wrap">
-							<img src="<?php echo $modules_product_image_b; ?>" alt="" class="product-image">
-							<img src="<?php echo $modules_background_image; ?>" alt="" class="product-background-image">
+				</div>
+			</div>
+		</div>
+
+	</section>
+	<!--/bullet list b-->
+
+	<section class="fracking-header parallax__group">
+		<div class="parallax__layer parallax__layer--back">
+			<div class="grid-x align-center">
+				<div class="cell small-12 medium-8 large-6">
+					<div class="wrap">
+						<div class="bullet-list-wrap header-list-wrap">
+							<h3><?php echo $modules_header ;?></h3>
 						</div>
 					</div>
 				</div>
 			</div>
 
 		</div>
-
 	</section>
-	<!--/bullet list-->
+	<!--/fracking-header-->
 
-	<section class="bullet-list-b parallax__group" style="background:url('<?php echo $modules_product_image ;?>')">
-
+	<section class="ease-of-maintenance parallax__group" style="background: url('<?php echo $product_image_c;?>')">
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-center">
-				<div class="cell small-12 medium-8 large-6">
+				<div class="cell small-12 medium-6 large-4">
 					<div class="wrap">
-						<div class="bullet-list-wrap">
+						<div class="bullet-list-wrap dark">
+							<h3><?php echo $modules_bullet_title_b  ;?></h3>
 							<ul>
 								<?php
 
@@ -311,9 +323,23 @@ $modules_background_image = $fracking['modules']['background_image'];
 				</div>
 			</div>
 		</div>
-
 	</section>
-	<!--/bullet list b-->
+	<!--/fracking-header-->
+
+	<section class="header-b parallax__group">
+		<div class="parallax__layer parallax__layer--back">
+			<div class="grid-container">
+				<div class="grid-x align-center">
+					<div class="cell small-12 medium-9 large-7">
+						<div class="bullet-list-wrap header-list-wrap">
+							<h3><?php echo $header_b ;?></h3>
+							<h3><?php echo $header_c ;?></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<?php
 	get_template_part( 'template-parts/footer' );
