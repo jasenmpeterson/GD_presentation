@@ -1,7 +1,19 @@
 .title-bar {
-  background: none;
+  background: $white-smoke;
 }
 .menu-icon:after {
-  background: $eerie-black;
-  box-shadow: 0 7px 0 $eerie-black, 0 14px 0 $eerie-black;
+  background: $maroon;
+  box-shadow: 0 7px 0 $maroon, 0 14px 0 $maroon;
+}
+
+.off-canvas {
+  background: $white-smoke;
+}
+
+.off-canvas > ul.menu li {
+  border-bottom: 1px solid $timberwolf;
+}
+
+.off-canvas > ul.menu a {
+  color: $eerie-black;
 }

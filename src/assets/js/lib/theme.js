@@ -91,7 +91,6 @@ function productScrollMagic() {
       }
      })
     .addTo(sceneController)
-    .addIndicators()
 
   // reliable construction
 
@@ -106,7 +105,6 @@ function productScrollMagic() {
       }
     })
     .addTo(sceneController)
-    .addIndicators()
 
   // power
 
@@ -119,7 +117,6 @@ function productScrollMagic() {
       }
     })
     .addTo(sceneController)
-    .addIndicators()
 
   // footprint
 
@@ -132,7 +129,6 @@ function productScrollMagic() {
       }
     })
     .addTo(sceneController)
-    .addIndicators()
 
   // smooth operating
 
@@ -146,7 +142,6 @@ function productScrollMagic() {
       }
     })
     .addTo(sceneController)
-    .addIndicators()
 
   // designs
 
@@ -159,7 +154,6 @@ function productScrollMagic() {
       }
     })
     .addTo(sceneController)
-    .addIndicators()
 
   // module bullet list
 
@@ -172,7 +166,6 @@ function productScrollMagic() {
       }
     })
     .addTo(sceneController)
-    .addIndicators()
 
   // module bullet list b
 
@@ -185,7 +178,6 @@ function productScrollMagic() {
       }
     })
     .addTo(sceneController)
-    .addIndicators()
 
   new ScrollMagic.Scene({
     triggerElement: '.fracking-header'
@@ -196,7 +188,6 @@ function productScrollMagic() {
       }
     })
     .addTo(sceneController)
-    .addIndicators()
 
   new ScrollMagic.Scene({
     triggerElement: '.ease-of-maintenance'
@@ -207,7 +198,6 @@ function productScrollMagic() {
       }
     })
     .addTo(sceneController)
-    .addIndicators()
 
   new ScrollMagic.Scene({
     triggerElement: '.header-b'
@@ -218,6 +208,11 @@ function productScrollMagic() {
       }
     })
     .addTo(sceneController)
-    .addIndicators()
 }
 
+// mobile menu
+
+$('.mobile-off-canvas-menu a').click(function(e){
+  e.preventDefault();
+  $('.mobile-off-canvas-menu').foundation('close')
+})

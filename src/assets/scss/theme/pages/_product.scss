@@ -118,6 +118,12 @@
   }
 }
 
+.desktop-menu li {
+  @media screen and (min-width: 20rem) {
+    display: inline-block;
+  }
+}
+
 .dropdown.menu .is-active > a {
   background: transparent;
   color: #fff;
@@ -129,14 +135,16 @@
   color: #fff;
   display: inline-block;
   padding: 0.4rem;
-  width: 10rem;
   text-align: center;
   font-size: 1rem;
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
   outline: 1px solid;
   outline-color: rgba(255, 255, 255, .5);
-  @media screen and (min-width: 40rem) {
+  @media screen and (min-width: 20rem) {
     width: 6.5rem;
+  }
+  @media screen and (min-width: 90rem) {
+    width: 10rem;
   }
 
 }
