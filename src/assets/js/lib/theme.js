@@ -1,4 +1,5 @@
 // ajax page loading:
+// TODO - only trigger scroll magic if triggerElement is in DOM.
 
 // progress bar
 
@@ -83,11 +84,13 @@ function productScrollMagic() {
     new ScrollMagic.Scene({
       triggerElement: '.minimize-time-product'
     })
-    .on('enter', function(event) {
+    .on('start', function(event) {
       var section = $(event.target.triggerElement()).attr('data-name');
+      progressBar(section)
+    })
+    .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
         $('.product').addClass('active')
-        progressBar(section)
       }
      })
     .addTo(sceneController)
@@ -97,9 +100,11 @@ function productScrollMagic() {
   new ScrollMagic.Scene({
     triggerElement: '.reliable-construction'
   })
-    .on('enter', function(event) {
+    .on('start', function(event) {
       var section = $(event.target.triggerElement()).attr('data-name');
       progressBar(section)
+    })
+    .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
         $('.reliable-construction').addClass('active')
       }
@@ -111,6 +116,10 @@ function productScrollMagic() {
   new ScrollMagic.Scene({
     triggerElement: '.power'
   })
+    .on('start', function(event) {
+      var section = $(event.target.triggerElement()).attr('data-name');
+      progressBar(section)
+    })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
         $('.power').addClass('active');
@@ -123,6 +132,10 @@ function productScrollMagic() {
   new ScrollMagic.Scene({
     triggerElement: '.smallest-footprint'
   })
+    .on('start', function(event) {
+      var section = $(event.target.triggerElement()).attr('data-name');
+      progressBar(section)
+    })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
         $('.smallest-footprint').addClass('active');
@@ -136,6 +149,10 @@ function productScrollMagic() {
     triggerElement: '.smoothest-operating',
     offset: -300
   })
+    .on('start', function(event) {
+      var section = $(event.target.triggerElement()).attr('data-name');
+      progressBar(section)
+    })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
         $('.smoothest-operating').addClass('active');
@@ -148,6 +165,10 @@ function productScrollMagic() {
   new ScrollMagic.Scene({
     triggerElement: '.designs'
   })
+    .on('start', function(event) {
+      var section = $(event.target.triggerElement()).attr('data-name');
+      progressBar(section)
+    })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
         $('.designs').addClass('active');
@@ -160,9 +181,13 @@ function productScrollMagic() {
   new ScrollMagic.Scene({
     triggerElement: '.modules-bullet-list'
   })
+    .on('start', function(event) {
+      var section = $(event.target.triggerElement()).attr('data-name');
+      progressBar(section)
+    })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
-        $('.modules-bullet-list').addClass('active');
+        $('.modules-bullet-list').addClass('active')
       }
     })
     .addTo(sceneController)
@@ -172,6 +197,10 @@ function productScrollMagic() {
   new ScrollMagic.Scene({
     triggerElement: '.bullet-list-b'
   })
+    .on('start', function(event) {
+      var section = $(event.target.triggerElement()).attr('data-name');
+      progressBar(section)
+    })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
         $('.bullet-list-b').addClass('active');
@@ -182,6 +211,10 @@ function productScrollMagic() {
   new ScrollMagic.Scene({
     triggerElement: '.fracking-header'
   })
+    .on('start', function(event) {
+      var section = $(event.target.triggerElement()).attr('data-name');
+      progressBar(section)
+    })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
         $('.fracking-header').addClass('active');
@@ -191,6 +224,9 @@ function productScrollMagic() {
 
   new ScrollMagic.Scene({
     triggerElement: '.ease-of-maintenance'
+  })    .on('start', function(event) {
+    var section = $(event.target.triggerElement()).attr('data-name');
+    progressBar(section)
   })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
@@ -202,6 +238,10 @@ function productScrollMagic() {
   new ScrollMagic.Scene({
     triggerElement: '.header-b'
   })
+    .on('start', function(event) {
+      var section = $(event.target.triggerElement()).attr('data-name');
+      progressBar(section);
+    })
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
         $('.header-b').addClass('active')

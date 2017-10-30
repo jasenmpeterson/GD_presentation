@@ -128,7 +128,7 @@
 
 	<!-- TODO - need to slow this down -->
 
-	<section class="power parallax__group">
+	<section class="power parallax__group" data-name="power">
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
 			<div class="grid-x align-middle">
@@ -164,7 +164,7 @@
 	</section>
 	<!--/background-->
 
-	<section class="smallest-footprint parallax__group" style="background:url('<?php echo $footprint['image'] ;?>')">
+	<section class="smallest-footprint parallax__group" style="background:url('<?php echo $footprint['image'] ;?>')" data-name="smallest-footprint">
 
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-center">
@@ -192,7 +192,7 @@
 	</section>
 	<!--/smallest footprint-->
 
-	<section class="smoothest-operating parallax__group">
+	<section class="smoothest-operating parallax__group" data-name="smoothest-operating">
 
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-middle align-center">
@@ -230,7 +230,7 @@
 
 	<section class="parallax__group">
 
-		<div class="parallax__layer parallax__layer--back designs">
+		<div class="parallax__layer parallax__layer--back designs" data-name="designs">
 
 			<div class="grid-x">
 				<div class="cell small-12 medium-6">
@@ -264,7 +264,7 @@
 
 	<section class="parallax__group">
 
-		<div class="parallax__layer parallax__layer--base modules-bullet-list">
+		<div class="parallax__layer parallax__layer--base modules-bullet-list" data-name="modules-bullet-list">
 
 			<div class="grid-container">
 				<div class="grid-x align-center-middle">
@@ -297,7 +297,7 @@
 	</section>
 	<!--/bullet list-->
 
-	<section class="bullet-list-b parallax__group" style="background:url('<?php echo $modules_product_image ;?>')">
+	<section class="bullet-list-b parallax__group" style="background:url('<?php echo $modules_product_image ;?>')" data-name="allow-steel">
 
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-center">
@@ -336,26 +336,25 @@ get_template_part( 'template-parts/footer' );
 		<div class="labels">
 			<span data-name="minimize-time">Minimize Time</span>
 			<span data-name="reliable-construction">Reliable Construction</span>
-			<span>Power</span>
-			<span>Footprint</span>
-			<span>Smooth Operating</span>
+			<span data-name="power">Power</span>
+			<span data-name="smallest-footprint">Footprint</span>
+			<span data-name="smoothest-operating">Smooth Operating</span>
 		</div>
 		<div class="indicators">
 			<div class="indicators-wrap">
 				<span data-name="minimize-time"></span>
 				<span data-name="reliable-construction"></span>
-				<span></span>
-				<span></span>
-				<span></span>
+				<span data-name="power"></span>
+				<span data-name="smallest-footprint"></span>
+				<span data-name="smoothest-operating"></span>
 			</div>
 		</div>
 	</div>
 	<div class="wrap">
 		<h5>Modules</h5>
 		<div class="labels">
-			<span>Designs</span>
-			<span>Will Fit</span>
-			<span>Allow Steel</span>
+			<span data-name="designs">Designs</span>
+			<span data-name="modules-bullet-list"></span>
 			<span>Low Stress</span>
 			<span>Maximize Life</span>
 			<span>Maintenance</span>
@@ -363,7 +362,8 @@ get_template_part( 'template-parts/footer' );
 		</div>
 		<div class="indicators">
 			<div class="indicators-wrap">
-				<span></span>
+				<span data-name="designs"></span>
+				<span data-name="modules-bullet-list"></span>
 				<span></span>
 				<span></span>
 				<span></span>

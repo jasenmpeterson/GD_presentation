@@ -72,7 +72,7 @@ $header_c = $fracking['modules']['header_c'];
 	</section>
 	<!--/minimize-time-->
 
-	<section class="minimize-time-product parallax__group">
+	<section class="minimize-time-product parallax__group" data-name="minimize-time">
 
 		<div class="product drilling parallax__layer parallax__layer--back">
 
@@ -105,7 +105,7 @@ $header_c = $fracking['modules']['header_c'];
 
 	</section>
 
-	<section class="reliable-construction parallax__group">
+	<section class="reliable-construction parallax__group" data-name="reliable-construction">
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
 			<div class="grid-x align-middle align-center">
@@ -133,7 +133,7 @@ $header_c = $fracking['modules']['header_c'];
 
 	<!-- TODO - need to slow this down -->
 
-	<section class="power parallax__group">
+	<section class="power parallax__group" data-name="power">
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
 			<div class="grid-x align-middle align-right">
@@ -169,7 +169,7 @@ $header_c = $fracking['modules']['header_c'];
 	</section>
 	<!--/background-->
 
-	<section class="smallest-footprint parallax__group" style="background: url('<?php echo $agma['image']; ?>')">
+	<section class="smallest-footprint parallax__group" style="background: url('<?php echo $agma['image']; ?>')" data-name="smallest-footprint">
 
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-center">
@@ -197,7 +197,7 @@ $header_c = $fracking['modules']['header_c'];
 	</section>
 	<!--/smallest footprint-->
 
-	<section class="smoothest-operating parallax__group" style="background: url('<?php echo $thunder['background_image']; ?>')">
+	<section class="smoothest-operating parallax__group" style="background: url('<?php echo $thunder['background_image']; ?>')" data-name="smoothest-operating">
 
 		<div class="parallax__layer parallax__layer--base">
 			<div class="grid-x align-middle align-center">
@@ -234,7 +234,7 @@ $header_c = $fracking['modules']['header_c'];
 
 	<section class="parallax__group reliablity">
 
-		<div class="parallax__layer parallax__layer--base modules-bullet-list">
+		<div class="parallax__layer parallax__layer--base modules-bullet-list" data-name="reliablity">
 
 			<div class="grid-x align-right">
 				<div class="cell small-12 medium-8">
@@ -268,7 +268,7 @@ $header_c = $fracking['modules']['header_c'];
 	</section>
 	<!--/bullet list-->
 
-	<section class="bullet-list-b parallax__group">
+	<section class="bullet-list-b parallax__group" data-name="geometry">
 
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-right">
@@ -284,7 +284,7 @@ $header_c = $fracking['modules']['header_c'];
 	</section>
 	<!--/bullet list b-->
 
-	<section class="fracking-header parallax__group">
+	<section class="fracking-header parallax__group" data-name="geometry">
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-center">
 				<div class="cell small-12 medium-8 large-6">
@@ -300,7 +300,7 @@ $header_c = $fracking['modules']['header_c'];
 	</section>
 	<!--/fracking-header-->
 
-	<section class="ease-of-maintenance parallax__group" style="background: url('<?php echo $product_image_c;?>')">
+	<section class="ease-of-maintenance parallax__group" style="background: url('<?php echo $product_image_c;?>')" data-name="ease-of-maintenance">
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-center">
 				<div class="cell small-12 medium-6 large-4">
@@ -326,7 +326,7 @@ $header_c = $fracking['modules']['header_c'];
 	</section>
 	<!--/fracking-header-->
 
-	<section class="header-b parallax__group">
+	<section class="header-b parallax__group" data-name="designs">
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-container">
 				<div class="grid-x align-center">
@@ -351,40 +351,36 @@ $header_c = $fracking['modules']['header_c'];
 	<div class="wrap">
 		<h5>Pumps</h5>
 		<div class="labels">
-			<span class="active">Minimize Time</span>
-			<span>Reliable Construction</span>
-			<span>Power</span>
-			<span>Footprint</span>
-			<span>Smooth Operating</span>
+			<span data-name="minimize-time">Minimize Time</span>
+			<span data-name="reliable-construction">Reliable Construction</span>
+			<span data-name="power">Power</span>
+			<span data-name="smallest-footprint">High Quality</span>
+			<span data-name="smoothest-operating">Thunder</span>
 		</div>
 		<div class="indicators">
 			<div class="indicators-wrap">
-				<span class="active"></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
+				<span data-name="minimize-time"></span>
+				<span data-name="reliable-construction"></span>
+				<span data-name="power"></span>
+				<span data-name="smallest-footprint"></span>
+				<span data-name="smoothest-operating"></span>
 			</div>
 		</div>
 	</div>
 	<div class="wrap">
 		<h5>Modules</h5>
 		<div class="labels">
-			<span>Designs</span>
-			<span>Will Fit</span>
-			<span>Allow Steel</span>
-			<span>Low Stress</span>
-			<span>Maximize Life</span>
-			<span>Maintenance</span>
-			<span>Resistance</span>
+			<span data-name="reliablity">Reliablity</span>
+			<span data-name="geometry">Geometry</span>
+			<span data-name="ease-of-maintenance">Maintenance</span>
+			<span data-name="designs">Designs</span>
 		</div>
 		<div class="indicators">
 			<div class="indicators-wrap">
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
+				<span data-name="reliablity"></span>
+				<span data-name="geometry"></span>
+				<span data-name="ease-of-maintenance"></span>
+				<span data-name="designs"></span>
 			</div>
 		</div>
 	</div>
