@@ -66,16 +66,15 @@ div.wipe.active {
   height: 100vh;
   overflow-x: hidden;
   overflow-y: scroll;
-  scroll-behavior: smooth;
 }
 
-//.parallax__layer {
-//  position: absolute;
-//  top: 0;
-//  right: 0;
-//  bottom: 0;
-//  left: 0;
-//}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 
 .parallax__layer--base {
   transform: translateZ(0);
@@ -90,6 +89,7 @@ div.wipe.active {
   min-height: 500px;
   transform-style: preserve-3d;
   margin: 15rem 0;
+  scroll-behavior: smooth;
 }
 
 .parallax__group:not(.background) {

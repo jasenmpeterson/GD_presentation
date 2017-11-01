@@ -65,7 +65,7 @@
 	</section>
 	<!--/minimize-time-->
 
-	<section class="minimize-time-product parallax__group" data-name="minimize-time">
+	<section class="minimize-time-product parallax__group" data-name="minimize-time" id="minimize-time">
 
 		<div class="product drilling parallax__layer parallax__layer--back">
 
@@ -98,7 +98,7 @@
 
 	</section>
 
-	<section class="reliable-construction parallax__group" data-name="reliable-construction">
+	<section class="reliable-construction parallax__group" data-name="reliable-construction" id="reliable-construction">
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
 			<div class="grid-container">
@@ -128,7 +128,7 @@
 
 	<!-- TODO - need to slow this down -->
 
-	<section class="power parallax__group" data-name="power">
+	<section class="power parallax__group" data-name="power" id="power">
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
 			<div class="grid-x align-middle">
@@ -158,13 +158,13 @@
 	<!--/power-->
 
 	<section class="background background-one parallax__group">
-		<div class="parallax__layer parallax__layer--base">
+		<div class="parallax__layer parallax__layer--back">
 			<div class="background-image" style="background: url('<?php echo $background; ?>')"></div>
 		</div>
 	</section>
 	<!--/background-->
 
-	<section class="smallest-footprint parallax__group" style="background:url('<?php echo $footprint['image'] ;?>')" data-name="smallest-footprint">
+	<section class="smallest-footprint parallax__group" style="background:url('<?php echo $footprint['image'] ;?>')" data-name="smallest-footprint" id="smallest-footprint">
 
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-center">
@@ -192,7 +192,7 @@
 	</section>
 	<!--/smallest footprint-->
 
-	<section class="smoothest-operating parallax__group" data-name="smoothest-operating">
+	<section class="smoothest-operating parallax__group" data-name="smoothest-operating" id="smoothest-operating">
 
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-middle align-center">
@@ -222,7 +222,7 @@
 	<!--/smooth operating-->
 
 	<section class="background background-two parallax__group">
-		<div class="parallax__layer parallax__layer--base">
+		<div class="parallax__layer parallax__layer--back">
 			<div class="background-image" style="background: url('<?php echo $smoothest_operating['background_image']; ?>')"></div>
 		</div>
 	</section>
@@ -230,7 +230,7 @@
 
 	<section class="parallax__group">
 
-		<div class="parallax__layer parallax__layer--back designs" data-name="designs">
+		<div class="parallax__layer parallax__layer--back designs" data-name="designs" id="designs">
 
 			<div class="grid-x">
 				<div class="cell small-12 medium-6">
@@ -259,12 +259,11 @@
 
 		</div>
 		<!--/designs-->
-
 	</section>
 
 	<section class="parallax__group">
 
-		<div class="parallax__layer parallax__layer--base modules-bullet-list" data-name="modules-bullet-list">
+		<div class="parallax__layer parallax__layer--base modules-bullet-list" data-name="designs">
 
 			<div class="grid-container">
 				<div class="grid-x align-center-middle">
@@ -297,7 +296,7 @@
 	</section>
 	<!--/bullet list-->
 
-	<section class="bullet-list-b parallax__group" style="background:url('<?php echo $modules_product_image ;?>')" data-name="allow-steel">
+	<section class="bullet-list-b parallax__group" style="background:url('<?php echo $modules_product_image ;?>')" data-name="designs">
 
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-center">
@@ -354,20 +353,10 @@ get_template_part( 'template-parts/footer' );
 		<h5>Modules</h5>
 		<div class="labels">
 			<span data-name="designs">Designs</span>
-			<span data-name="modules-bullet-list"></span>
-			<span>Low Stress</span>
-			<span>Maximize Life</span>
-			<span>Maintenance</span>
-			<span>Resistance</span>
 		</div>
 		<div class="indicators">
-			<div class="indicators-wrap">
+			<div class="modules indicators-wrap">
 				<span data-name="designs"></span>
-				<span data-name="modules-bullet-list"></span>
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
 			</div>
 		</div>
 	</div>

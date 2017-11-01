@@ -41,7 +41,7 @@ function loadPage(slug) {
           $('.parallax-nav').removeClass('active')
         }
       });
-
+      $('.parallax-nav span').removeClass('active')
     }
   })
 }
@@ -66,7 +66,6 @@ function productScrollMagic() {
   var sceneController = new ScrollMagic.Controller(
     {
       container: '.parallax'
-
     });
 
   // minimize time
@@ -74,7 +73,7 @@ function productScrollMagic() {
   // -- the bottom line scene
 
   new ScrollMagic.Scene({
-    triggerElement: '.the-bottom-line'
+    triggerElement: '.the-bottom-line',
   })
     .setClassToggle('.the-bottom-line', 'active')
     .addTo(sceneController)
@@ -95,10 +94,10 @@ function productScrollMagic() {
      })
     .addTo(sceneController)
 
-  // reliable construction
 
+  // reliable construction
   new ScrollMagic.Scene({
-    triggerElement: '.reliable-construction'
+    triggerElement: '.reliable-construction',
   })
     .on('start', function(event) {
       var section = $(event.target.triggerElement()).attr('data-name');
@@ -146,8 +145,7 @@ function productScrollMagic() {
   // smooth operating
 
   new ScrollMagic.Scene({
-    triggerElement: '.smoothest-operating',
-    offset: -300
+    triggerElement: '.smoothest-operating'
   })
     .on('start', function(event) {
       var section = $(event.target.triggerElement()).attr('data-name');
@@ -162,19 +160,21 @@ function productScrollMagic() {
 
   // designs
 
-  new ScrollMagic.Scene({
-    triggerElement: '.designs'
-  })
-    .on('start', function(event) {
-      var section = $(event.target.triggerElement()).attr('data-name');
-      progressBar(section)
+  if($('.designs').length) {
+    new ScrollMagic.Scene({
+      triggerElement: '.designs'
     })
-    .on('enter', function(event) {
-      if(event.scrollDirection === 'FORWARD') {
-        $('.designs').addClass('active');
-      }
-    })
-    .addTo(sceneController)
+      .on('start', function(event) {
+        var section = $(event.target.triggerElement()).attr('data-name');
+        progressBar(section)
+      })
+      .on('enter', function(event) {
+        if(event.scrollDirection === 'FORWARD') {
+          $('.designs').addClass('active');
+        }
+      })
+      .addTo(sceneController)
+  }
 
   // module bullet list
 
@@ -204,50 +204,51 @@ function productScrollMagic() {
     .on('enter', function(event) {
       if(event.scrollDirection === 'FORWARD') {
         $('.bullet-list-b').addClass('active');
-      }
-    })
-    .addTo(sceneController)
-
-  new ScrollMagic.Scene({
-    triggerElement: '.fracking-header'
-  })
-    .on('start', function(event) {
-      var section = $(event.target.triggerElement()).attr('data-name');
-      progressBar(section)
-    })
-    .on('enter', function(event) {
-      if(event.scrollDirection === 'FORWARD') {
         $('.fracking-header').addClass('active');
       }
     })
     .addTo(sceneController)
 
-  new ScrollMagic.Scene({
-    triggerElement: '.ease-of-maintenance'
-  })    .on('start', function(event) {
-    var section = $(event.target.triggerElement()).attr('data-name');
-    progressBar(section)
-  })
-    .on('enter', function(event) {
-      if(event.scrollDirection === 'FORWARD') {
-        $('.ease-of-maintenance').addClass('active')
-      }
-    })
-    .addTo(sceneController)
-
-  new ScrollMagic.Scene({
-    triggerElement: '.header-b'
-  })
-    .on('start', function(event) {
+  if($('.ease-of-maintenance').length) {
+    new ScrollMagic.Scene({
+      triggerElement: '.ease-of-maintenance'
+    })    .on('start', function(event) {
       var section = $(event.target.triggerElement()).attr('data-name');
-      progressBar(section);
+      progressBar(section)
     })
-    .on('enter', function(event) {
-      if(event.scrollDirection === 'FORWARD') {
-        $('.header-b').addClass('active')
-      }
+      .on('enter', function(event) {
+        if(event.scrollDirection === 'FORWARD') {
+          $('.ease-of-maintenance').addClass('active')
+        }
+      })
+      .addTo(sceneController)
+  }
+
+  if($('.header-b').length) {
+    new ScrollMagic.Scene({
+      triggerElement: '.header-b'
     })
-    .addTo(sceneController)
+      .on('start', function(event) {
+        var section = $(event.target.triggerElement()).attr('data-name');
+        progressBar(section);
+      })
+      .on('enter', function(event) {
+        if(event.scrollDirection === 'FORWARD') {
+          $('.header-b').addClass('active')
+        }
+      })
+      .addTo(sceneController)
+  }
+  // scroll to
+
+  // sceneController.scrollTo(function (newpos) {
+  //   TweenMax.to('.parallax', 0.5, {scrollTo: {y: newpos, offsetY: 200}});
+  // })
+  //
+  // $('.parallax-nav span').click(function() {
+  //   var id = $(this).attr("data-name");
+  //   sceneController.scrollTo('#'+id);
+  // })
 }
 
 // mobile menu

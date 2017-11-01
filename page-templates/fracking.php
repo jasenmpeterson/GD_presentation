@@ -37,7 +37,7 @@ $header_c = $fracking['modules']['header_c'];
 ?>
 <div class="product-template parallax fracking">
 
-	<section class="minimize-time parallax__group">
+	<section class="minimize-time parallax__group" id="minimize-time">
 
 		<div class="the-bottom-line parallax__layer parallax__layer--back">
 
@@ -105,7 +105,7 @@ $header_c = $fracking['modules']['header_c'];
 
 	</section>
 
-	<section class="reliable-construction parallax__group" data-name="reliable-construction">
+	<section class="reliable-construction parallax__group" data-name="reliable-construction" id="reliable-construction">
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
 			<div class="grid-x align-middle align-center">
@@ -133,7 +133,7 @@ $header_c = $fracking['modules']['header_c'];
 
 	<!-- TODO - need to slow this down -->
 
-	<section class="power parallax__group" data-name="power">
+	<section class="power parallax__group" data-name="power" id="power">
 
 		<div class="parallax__layer parallax__layer--base bullets-layer">
 			<div class="grid-x align-middle align-right">
@@ -162,17 +162,11 @@ $header_c = $fracking['modules']['header_c'];
 	</section>
 	<!--/power-->
 
-	<section class="background background-one parallax__group">
+
+	<section class="smallest-footprint parallax__group" style="background: url('<?php echo $background; ?>')" data-name="smallest-footprint" id="smallest-footprint">
+
 		<div class="parallax__layer parallax__layer--base">
-			<div class="background-image" style="background: url('<?php echo $background; ?>')"></div>
-		</div>
-	</section>
-	<!--/background-->
-
-	<section class="smallest-footprint parallax__group" style="background: url('<?php echo $agma['image']; ?>')" data-name="smallest-footprint">
-
-		<div class="parallax__layer parallax__layer--back">
-			<div class="grid-x align-center">
+			<div class="grid-x align-middle align-center">
 				<div class="cell small-12 medium-6 large-4">
 					<div class="wrap">
 						<div class="bullet-list-wrap">
@@ -197,7 +191,7 @@ $header_c = $fracking['modules']['header_c'];
 	</section>
 	<!--/smallest footprint-->
 
-	<section class="smoothest-operating parallax__group" style="background: url('<?php echo $thunder['background_image']; ?>')" data-name="smoothest-operating">
+	<section class="smoothest-operating parallax__group" style="background: url('<?php echo $thunder['background_image']; ?>')" data-name="smoothest-operating" id="smoothest-operating">
 
 		<div class="parallax__layer parallax__layer--base">
 			<div class="grid-x align-middle align-center">
@@ -234,18 +228,9 @@ $header_c = $fracking['modules']['header_c'];
 
 	<section class="parallax__group reliablity">
 
-		<div class="parallax__layer parallax__layer--base modules-bullet-list" data-name="reliablity">
-
-			<div class="grid-x align-right">
-				<div class="cell small-12 medium-8">
-					<div class="image-wrap">
-						<img src="<?php echo $modules_product_image; ?>" alt="" class="product-image">
-						<img src="<?php echo $modules_background_image; ?>" alt="" class="product-background-image">
-					</div>
-				</div>
-			</div>
+		<div class="parallax__layer parallax__layer--back modules-bullet-list" data-name="reliablity" id="reliablity">
 			<div class="grid-x">
-				<div class="cell small-12 medium-6 large-5">
+				<div class="cell small-12 medium-6">
 					<div class="bullet-list-wrap dark">
 						<h3><?php echo $modules_bullet_title ;?></h3>
 						<ul>
@@ -261,18 +246,30 @@ $header_c = $fracking['modules']['header_c'];
 						</ul>
 					</div>
 				</div>
+				<div class="cell small-12 medium-6">
+					<div class="image-wrap">
+						<img src="<?php echo $modules_product_image; ?>" alt="" class="product-image">
+						<img src="<?php echo $modules_background_image; ?>" alt="" class="product-background-image">
+					</div>
+				</div>
 			</div>
-
 		</div>
 
 	</section>
 	<!--/bullet list-->
 
-	<section class="bullet-list-b parallax__group" data-name="geometry">
+	<section class="bullet-list-b parallax__group" data-name="geometry" id="geometry">
 
 		<div class="parallax__layer parallax__layer--back">
-			<div class="grid-x align-right">
-				<div class="cell small-12 medium-8">
+			<div class="grid-x align-middle">
+				<div class="cell small-12 medium-6">
+					<div class="wrap fracking-header">
+						<div class="bullet-list-wrap header-list-wrap text-right">
+							<h3><?php echo $modules_header ;?></h3>
+						</div>
+					</div>
+				</div>
+				<div class="cell small-12 medium-6">
 					<div class="image-wrap">
 						<img src="<?php echo $modules_product_image_b; ?>" alt="" class="product-image">
 						<img src="<?php echo $modules_background_image_b; ?>" alt="" class="product-background-image">
@@ -284,23 +281,7 @@ $header_c = $fracking['modules']['header_c'];
 	</section>
 	<!--/bullet list b-->
 
-	<section class="fracking-header parallax__group" data-name="geometry">
-		<div class="parallax__layer parallax__layer--back">
-			<div class="grid-x align-center">
-				<div class="cell small-12 medium-8 large-6">
-					<div class="wrap">
-						<div class="bullet-list-wrap header-list-wrap">
-							<h3><?php echo $modules_header ;?></h3>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-	</section>
-	<!--/fracking-header-->
-
-	<section class="ease-of-maintenance parallax__group" style="background: url('<?php echo $product_image_c;?>')" data-name="ease-of-maintenance">
+	<section class="ease-of-maintenance parallax__group" style="background: url('<?php echo $product_image_c;?>')" data-name="ease-of-maintenance" id="ease-of-maintenance">
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-x align-center">
 				<div class="cell small-12 medium-6 large-4">
@@ -326,7 +307,7 @@ $header_c = $fracking['modules']['header_c'];
 	</section>
 	<!--/fracking-header-->
 
-	<section class="header-b parallax__group" data-name="designs">
+	<section class="header-b parallax__group" data-name="designs" id="designs">
 		<div class="parallax__layer parallax__layer--back">
 			<div class="grid-container">
 				<div class="grid-x align-center">
