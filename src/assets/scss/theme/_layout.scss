@@ -66,7 +66,7 @@ div.wipe.active {
   }
   right: 5rem;
   opacity: 0;
-  transition: 640ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: 300ms ease-out;
   transition-delay: 800ms;
 
   @media screen and (min-width: 20rem) {
@@ -75,6 +75,9 @@ div.wipe.active {
   @media screen and (min-width: 80rem) {
     display: block;
   }
+}
+.parallax-nav:hover {
+  opacity: 1 !important;
 }
 .mobile-logo {
   @media screen and (min-width: 20rem) {

@@ -30,7 +30,7 @@ $(window).scroll(function() {
 
     var topDistance = $(this).offset().top
 
-    if ( ( topDistance - 300 ) < scrollTop ) {
+    if ( ( topDistance - 450 ) < scrollTop ) {
       progressBar($(this).attr('data-name') )
     }
 
