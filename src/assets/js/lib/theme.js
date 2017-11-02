@@ -3,12 +3,30 @@
 
 // progress bar
 
+var progressBarClicked = false;
+
 function progressBar(section) {
-  if($('.parallax-nav span').hasClass('active')) {
-    $('.parallax-nav span').removeClass('active')
-  }
-  $('span[data-name="'+section+'"]').addClass('active');
+
+  $('.parallax-nav span').removeClass('active')
+  $('span[data-name="'+section+'"]').addClass('active')
+
 }
+
+$(window).scroll(function() {
+
+  var scrollTop = $(this).scrollTop()
+
+  $('.section').each(function () {
+
+    var topDistance = $(this).offset().top
+
+    if ( ( topDistance - 300 ) < scrollTop ) {
+      progressBar($(this).attr('data-name') )
+    }
+
+  })
+
+})
 
 // -- button click
 
@@ -20,28 +38,44 @@ $('.section-button').click(function () {
 // -- ajax call
 
 function loadPage(slug) {
+
   // ajax spinner
   $('.wipe').addClass('shown')
+
   $('.ajax-loader').addClass('active')
+
   $.ajax({
     url: slug,
     context: document.body,
     success: function (data) {
-      // ajax spinner
+
       $('.ajax-loader').removeClass('active')
+
       $('.wipe').addClass('active')
+
       pageDisplay(data);
+
       $('.parallax-nav').addClass('active')
+
       $('.menu-item a').click(function (e) {
+
         e.preventDefault();
+
         if(!$(this).parent().hasClass('is-active')) {
           var slug = $(this).text().toLowerCase()
           var slug = '/'+slug
           loadPage(slug)
           $('.parallax-nav').removeClass('active')
         }
+
+
+
       });
-      $('.parallax-nav span').removeClass('active')
+
+      $('.parallax-nav span').removeClass('active');
+
+      scrollMagic();
+
     }
   })
 }
@@ -51,204 +85,93 @@ function loadPage(slug) {
 function pageDisplay(data) {
 
   $('body').addClass('product-page')
+
   $('.page-wrap').html(data)
-  productScrollMagic()
+
   $('.wipe').removeClass('active shown')
 
 }
 
-// ScrollMagic -- https://github.com/janpaepke/ScrollMagic
+// Scroll Magic
 
-function productScrollMagic() {
+function scrollMagic() {
 
-  // -- scene controller
+  var controller = new ScrollMagic.Controller({
+    globalSceneOptions: {
+      container: '.product-template',
+      duration: '100%',
+      reverse: false
+    }
+  });
 
-  var sceneController = new ScrollMagic.Controller(
-    {
-      container: '.parallax'
-    });
-
-  // minimize time
-
-  // -- the bottom line scene
-
-  new ScrollMagic.Scene({
-    triggerElement: '.the-bottom-line',
-  })
-    .setClassToggle('.the-bottom-line', 'active')
-    .addTo(sceneController)
-
-  // -- the product scene
-
-    new ScrollMagic.Scene({
-      triggerElement: '.minimize-time-product'
-    })
-    .on('start', function(event) {
-      var section = $(event.target.triggerElement()).attr('data-name');
-      progressBar(section)
-    })
-    .on('enter', function(event) {
-      if(event.scrollDirection === 'FORWARD') {
-        $('.product').addClass('active')
-      }
-     })
-    .addTo(sceneController)
-
-
-  // reliable construction
-  new ScrollMagic.Scene({
-    triggerElement: '.reliable-construction',
+  var minimum = new ScrollMagic.Scene({
+    triggerElement: '.minimize-time'
   })
     .on('start', function(event) {
-      var section = $(event.target.triggerElement()).attr('data-name');
-      progressBar(section)
-    })
-    .on('enter', function(event) {
-      if(event.scrollDirection === 'FORWARD') {
-        $('.reliable-construction').addClass('active')
-      }
-    })
-    .addTo(sceneController)
+      $(event.target.triggerElement()).addClass('active')
+    }).addTo(controller)
 
-  // power
+  var reliable = new ScrollMagic.Scene({
+    triggerElement: '.reliable-construction'
+  })
+    .on('start', function(event) {
+      $(event.target.triggerElement()).addClass('active')
+    }).addTo(controller)
 
-  new ScrollMagic.Scene({
+  var power = new ScrollMagic.Scene({
     triggerElement: '.power'
   })
     .on('start', function(event) {
-      var section = $(event.target.triggerElement()).attr('data-name');
-      progressBar(section)
-    })
-    .on('enter', function(event) {
-      if(event.scrollDirection === 'FORWARD') {
-        $('.power').addClass('active');
-      }
-    })
-    .addTo(sceneController)
+      $(event.target.triggerElement()).addClass('active')
+    }).addTo(controller)
 
-  // footprint
-
-  new ScrollMagic.Scene({
+  var footprint = new ScrollMagic.Scene({
     triggerElement: '.smallest-footprint'
   })
     .on('start', function(event) {
-      var section = $(event.target.triggerElement()).attr('data-name');
-      progressBar(section)
-    })
-    .on('enter', function(event) {
-      if(event.scrollDirection === 'FORWARD') {
-        $('.smallest-footprint').addClass('active');
-      }
-    })
-    .addTo(sceneController)
+      $(event.target.triggerElement()).addClass('active')
+    }).addTo(controller)
 
-  // smooth operating
-
-  new ScrollMagic.Scene({
-    triggerElement: '.smoothest-operating'
+  var operating = new ScrollMagic.Scene({
+    triggerElement: '.smooth-operating'
   })
     .on('start', function(event) {
-      var section = $(event.target.triggerElement()).attr('data-name');
-      progressBar(section)
-    })
-    .on('enter', function(event) {
-      if(event.scrollDirection === 'FORWARD') {
-        $('.smoothest-operating').addClass('active');
-      }
-    })
-    .addTo(sceneController)
+      $(event.target.triggerElement()).addClass('active')
+    }).addTo(controller)
 
-  // designs
-
-  if($('.designs').length) {
-    new ScrollMagic.Scene({
-      triggerElement: '.designs'
-    })
-      .on('start', function(event) {
-        var section = $(event.target.triggerElement()).attr('data-name');
-        progressBar(section)
-      })
-      .on('enter', function(event) {
-        if(event.scrollDirection === 'FORWARD') {
-          $('.designs').addClass('active');
-        }
-      })
-      .addTo(sceneController)
-  }
-
-  // module bullet list
-
-  new ScrollMagic.Scene({
-    triggerElement: '.modules-bullet-list'
+  var designs = new ScrollMagic.Scene({
+    triggerElement: '.designs'
   })
     .on('start', function(event) {
-      var section = $(event.target.triggerElement()).attr('data-name');
-      progressBar(section)
-    })
-    .on('enter', function(event) {
-      if(event.scrollDirection === 'FORWARD') {
-        $('.modules-bullet-list').addClass('active')
-      }
-    })
-    .addTo(sceneController)
+      $(event.target.triggerElement()).addClass('active')
+    }).addTo(controller)
 
-  // module bullet list b
-
-  new ScrollMagic.Scene({
-    triggerElement: '.bullet-list-b'
+  var reliability = new ScrollMagic.Scene({
+    triggerElement: '.reliability'
   })
     .on('start', function(event) {
-      var section = $(event.target.triggerElement()).attr('data-name');
-      progressBar(section)
-    })
-    .on('enter', function(event) {
-      if(event.scrollDirection === 'FORWARD') {
-        $('.bullet-list-b').addClass('active');
-        $('.fracking-header').addClass('active');
-      }
-    })
-    .addTo(sceneController)
+      $(event.target.triggerElement()).addClass('active')
+    }).addTo(controller)
 
-  if($('.ease-of-maintenance').length) {
-    new ScrollMagic.Scene({
-      triggerElement: '.ease-of-maintenance'
-    })    .on('start', function(event) {
-      var section = $(event.target.triggerElement()).attr('data-name');
-      progressBar(section)
-    })
-      .on('enter', function(event) {
-        if(event.scrollDirection === 'FORWARD') {
-          $('.ease-of-maintenance').addClass('active')
-        }
-      })
-      .addTo(sceneController)
-  }
+  var maintenance = new ScrollMagic.Scene({
+    triggerElement: '.ease-of-maintenance'
+  })
+    .on('start', function(event) {
+      $(event.target.triggerElement()).addClass('active')
+    }).addTo(controller)
 
-  if($('.header-b').length) {
-    new ScrollMagic.Scene({
-      triggerElement: '.header-b'
-    })
-      .on('start', function(event) {
-        var section = $(event.target.triggerElement()).attr('data-name');
-        progressBar(section);
-      })
-      .on('enter', function(event) {
-        if(event.scrollDirection === 'FORWARD') {
-          $('.header-b').addClass('active')
-        }
-      })
-      .addTo(sceneController)
-  }
   // scroll to
 
-  // sceneController.scrollTo(function (newpos) {
-  //   TweenMax.to('.parallax', 0.5, {scrollTo: {y: newpos, offsetY: 200}});
-  // })
-  //
-  // $('.parallax-nav span').click(function() {
-  //   var id = $(this).attr("data-name");
-  //   sceneController.scrollTo('#'+id);
-  // })
+  controller.scrollTo(function (newpos) {
+    TweenMax.to(window, 0.5, {scrollTo: {y: newpos, offsetY: 200}});
+  })
+
+  $('.parallax-nav span').click(function() {
+    var id = $(this).attr("data-name");
+    controller.scrollTo('#'+id);
+    progressBar(id)
+  })
+
 }
 
 // mobile menu

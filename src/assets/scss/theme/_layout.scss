@@ -2,15 +2,13 @@ html,
 body {
   height: 100%;
 }
-
 body {
   background-color: $white-smoke;
+  overflow-x: hidden;
 }
-
 .page-wrap {
   position: relative;
 }
-
 .ajax-loader {
 
   position: fixed;
@@ -39,72 +37,291 @@ body {
   }
 
 }
-
 div.wipe {
   position: absolute;
   top: 0;
   right: 0;
   width: 0;
-  height: 100vh;
+  height: 100%;
   z-index: -1;
   background-color: $usc-cardinal;
   transition: all 600ms cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-
 div.wipe.shown {
   z-index: 10;
   width: 100%;
 }
-
 div.wipe.active {
   transform: translateX(-100%);
   z-index: 10;
 }
+.parallax-nav {
+  position: fixed;
+  z-index: 10;
+  @media screen and (min-width: 64rem) {
+    bottom: 5rem;
+  }
+  @media screen and (min-width: 120rem) {
+    bottom: 15rem;
+  }
+  right: 5rem;
+  opacity: 0;
+  transition: 640ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition-delay: 800ms;
 
-.parallax {
-  perspective: 1px;
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  @media screen and (min-width: 20rem) {
+    display: none;
+  }
+  @media screen and (min-width: 80rem) {
+    display: block;
+  }
+}
+.mobile-logo {
+  @media screen and (min-width: 20rem) {
+    display: block;
+    padding: 1.5rem;
+  }
+  @media screen and (min-width:40rem) {
+    display: none;
+  }
+}
+.parallax-nav span {
+  cursor: pointer;
 }
 
-.parallax__layer {
+.parallax-nav.active {
+  opacity: 1;
+}
+
+.parallax-nav .wrap {
+  display: flex;
+  padding: 5rem 0;
+  position: relative
+}
+
+.parallax-nav .wrap span {
+  display: block;
+  width: 200px;
+  text-align: right;
+  transition: 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+.parallax-nav h5 {
+  color: $maroon;
+  transform: rotate(-90deg);
   position: absolute;
   top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  right: -1.5rem;
+  margin: 0;
+  line-height: normal;
 }
 
-.parallax__layer--base {
-  transform: translateZ(0);
+.parallax-nav .wrap:last-of-type h5 {
+  right: -2rem;
 }
 
-.parallax__layer--back {
-  transform: translateZ(-1px) scale(2);
+.parallax-nav .labels span {
+  font-size: 0.8rem;
+  color: $quick-silver;
+  padding-right: 1.5rem;
 }
 
-.parallax__group {
+.parallax-nav .labels span.active {
+  color: $maroon;
+  font-weight: 700;
+}
+
+.indicators-wrap {
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
   position: relative;
-  min-height: 500px;
-  transform-style: preserve-3d;
-  margin: 15rem 0;
-  scroll-behavior: smooth;
-}
+  align-items: center;
 
-.parallax__group:not(.background) {
+  &:before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 100%;
+    background-color: $timberwolf;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+  }
+
+
+}
+.indicators-wrap.modules:before {
+  display: none
+}
+.parallax-nav .indicators span {
+
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: $timberwolf;
+  position: relative;
   z-index: 2;
 }
-
-.background-image {
-  -webkit-background-size: cover !important;
-  background-size: cover !important;
-  height: 500px;
-  background-position: center center !important;
+.parallax-nav .indicators span.active {
+  background-color: $indian-yellow;
+  border: 3px solid $maroon;
 }
-
+.product-page .top-bar ul {
+  margin-right: 5rem;
+  @media screen and (min-width: 40rem) {
+    margin-right: 2.5rem
+  }
+}
+.parallax__wrap {
+  max-width: 90rem;
+  width: 100%;
+  margin: 0 auto;
+}
 h1,
 h2,
 h3 {
   line-height: 1.2;
+}
+h1 {
+  @media screen and (min-width: 40rem) {
+    font-size: 2rem;
+  }
+  @media screen and (min-width: 90rem) {
+    font-size: 3rem;
+  }
+}
+h3 {
+  @media screen and (min-width: 40rem) {
+    font-size: 1.5rem;
+  }
+}
+.section {
+  @media screen and (min-width: 20rem) {
+    padding-right: 0;
+  }
+  @media screen and (min-width:80rem) {
+    padding-right: 20rem;
+  }
+  @media screen and (min-width:90rem) {
+    padding-right: 10rem;
+  }
+}
+
+.scroll-down {
+  width: 25px;
+  height: 25px;
+  margin: 0 auto;
+  transition: all 1s cubic-bezier(.645,.045,.355,1);
+  animation: scroll-down 1.5s infinite;
+  animation-delay: 1.75s;
+}
+
+.scroll-down circle, .scroll-down path {
+  fill: none;
+  stroke: $usc-cardinal;
+  stroke-miterlimit: 10;
+  stroke-width: 4px;
+}
+
+.product-template {
+  @media screen and (min-width: 20rem) {
+    padding: 12rem 0;
+  }
+  @media screen and (min-width:40rem) {
+    padding: 15.625rem 0;
+  }
+}
+.image-wrap {
+  position: relative;
+}
+.image-wrap .product-image {
+  position: relative;
+  z-index: 2;
+}
+.image-wrap .product-background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include box-shadow-all('rgba(0,0,0,.2)');
+}
+.bullet-list-wrap {
+  @media screen and (min-width: 20rem) {
+    padding: 0 3.5rem;
+  }
+  @media screen and (min-width:40rem) {
+    padding: 0;
+  }
+}
+.bullet-list-wrap h3 {
+  color: #646465;
+  margin-bottom: 1.5rem;
+}
+.bullet-list-wrap h3:before {
+  content: '';
+  display: block;
+  height: 1px;
+  opacity: 1;
+  width: 3rem;
+  background-color: #e79f4c;
+  margin-bottom: .5rem;
+  transition: opacity 640ms 345ms,width 640ms 365ms;
+  transition-timing-function: cubic-bezier(.455,.03,.515,.955);
+}
+.bullet-list-wrap ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.bullet-list-wrap li {
+  padding: 1.5rem 0 1.5rem 1rem;
+  font-weight: 600;
+  color: #646464;
+  border-top: 1px solid rgba(163,163,163,.5);
+  transition-timing-function: cubic-bezier(.455,.03,.515,.955);
+  @media screen and (min-width: 40rem) {
+    font-size: .7rem;
+  }
+  @media screen and (min-width: 90rem) {
+    font-size: .9rem;
+  }
+}
+.bullet-list-wrap li:last-of-type {
+  padding-bottom: 0;
+}
+.bullet-list-wrap.dark {
+  background-color: #2c2c2c;
+  padding: 2.5rem 1rem;
+  box-shadow: 0 0 15px rgba(44,62,80,.5);
+}
+.bullet-list-wrap.dark h3, .bullet-list-wrap.dark li {
+  color: #fff;
+}
+.bullets-large .bullet-list-wrap li {
+  padding: 0;
+  border: none;
+  @media screen and (min-width: 40rem) {
+    font-size: 0.9rem;
+  }
+  @media screen and (min-width: 90rem) {
+    font-size: 1.5rem;
+  }
+}
+.bullets-large .bullet-list-wrap li:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.bullets-large .bullet-list-wrap li:before {
+  content: '';
+  display: block;
+  height: 1px;
+  opacity: 1;
+  width: 3rem;
+  background-color: #e79f4c;
+  margin-bottom: .5rem;
+  transition-timing-function: cubic-bezier(.455,.03,.515,.955);
 }

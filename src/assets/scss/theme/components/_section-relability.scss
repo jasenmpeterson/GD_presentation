@@ -1,0 +1,104 @@
+.reliability {
+  @media screen and (min-width: 20rem) {
+    padding: 1.375rem 0;
+  }
+  @media screen and (min-width:40rem) {
+    padding: 9.375rem 0;
+  }
+}
+.reliability .image-wrap .product-background-image {
+  height: 95%;
+}
+.bullet-list-wrap-reliability {
+  margin-bottom: 1.5rem;
+}
+.reliability-image {
+  @media screen and (min-width: 20rem) {
+    padding-bottom: 1.375rem;
+  }
+  @media screen and (min-width:40rem) {
+    padding-bottom: 9.375rem;
+  }
+}
+.reliability-image .image-wrap .product-background-image {
+  left: auto;
+  right: 0;
+}
+
+.reliability .product-background-image {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 640ms,transform 640ms;
+}
+.reliability.active .product-background-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reliability .product-image {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 640ms 20ms,transform 640ms 20ms;
+}
+.reliability.active .product-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reliability .bullet-list-wrap {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 640ms 35ms,transform 640ms 45ms;
+  transition-timing-function: cubic-bezier(.455,.03,.515,.955);
+}
+.reliability.active .bullet-list-wrap {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reliability .bullet-list-wrap h3 {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 640ms 55ms,transform 640ms 65ms;
+}
+.reliability.active .bullet-list-wrap h3 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reliability .bullet-list-wrap li {
+  opacity: 0;
+  transform: translateX(100px);
+}
+.reliability.active .bullet-list-wrap li {
+  opacity: 1;
+  transform: translateX(0);
+}
+.reliability.active .bullet-list-wrap li:nth-of-type(1) {
+  opacity: 1;
+  transition: opacity 640ms 75ms,transform 640ms 85ms;
+}
+.reliability.active .bullet-list-wrap li:nth-of-type(2) {
+  opacity: 1;
+  transition: opacity 640ms 95ms,transform 640ms 105ms;
+}
+.reliability.active .bullet-list-wrap li:nth-of-type(3) {
+  opacity: 1;
+  transition: opacity 640ms 115ms,transform 640ms 125ms;
+}
+.reliability.active .bullet-list-wrap li:nth-of-type(4) {
+  opacity: 1;
+  transition: opacity 640ms 135ms,transform 640ms 145ms;
+}
+
+.geometry {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 640ms 150ms,transform 640ms 160ms;
+  transition-timing-function: cubic-bezier(.455,.03,.515,.955);
+}
+
+.reliability.active .geometry {
+  opacity: 1;
+  transform: translateY(0);
+}

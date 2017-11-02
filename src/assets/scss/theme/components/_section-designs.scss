@@ -1,0 +1,96 @@
+.designs {
+  @media screen and (min-width:20rem) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  @media screen and (min-width:40rem) {
+    padding-top: 9.375rem;
+    padding-bottom: 9.375rem;
+  }
+}
+.designs .product-background-image {
+  box-shadow: none;
+  z-index: 2;
+  width: 300px;
+  top: -1.5rem;
+}
+.designs .product-image {
+  z-index: 1;
+  @include box-shadow-all('rgba(0,0,0,.2)');
+}
+.designs .bullet-list-wrap {
+  @media screen and (min-width:20rem) {
+    padding: 3.5rem;
+  }
+  @media screen and (min-width:40rem) {
+    padding: 0 3.5rem;
+  }
+}
+.designs .bullets {
+  @media screen and (min-width:20rem) {
+    padding: 0;
+  }
+  @media screen and (min-width:40rem) {
+    padding: 0 3.5rem;
+  }
+}
+.designs .bullets-large .bullet-list-wrap {
+  @media screen and (min-width:20rem) {
+    padding-top: 0;
+  }
+  @media screen and (min-width:40rem) {
+    padding: 0 3.5rem;
+  }
+}
+.designs .background-image {
+  @include box-shadow-all('rgba(0,0,0,.2)');
+  margin-bottom: 3rem;
+}
+
+.designs .product-background-image {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 640ms,transform 640ms 20ms;
+}
+.designs.active .product-background-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.designs .product-image {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 640ms,transform 640ms 20ms;
+}
+.designs.active .product-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.designs .bullet-list-wrap h3 {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 640ms 40ms,transform 640ms 50ms;
+}
+.designs.active .bullet-list-wrap h3 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.designs .bullet-list-wrap li {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+.designs .bullet-list-wrap li:nth-child(1) {
+  transition: opacity 640ms 75ms,transform 640ms 85ms;
+}
+.designs .bullet-list-wrap li:nth-child(2) {
+  transition: opacity 640ms 95ms,transform 640ms 105ms;
+}
+.designs .bullet-list-wrap li:nth-child(3) {
+  transition: opacity 640ms 115ms,transform 640ms 125ms;
+}
+.designs.active .bullet-list-wrap li {
+  opacity: 1;
+  transform: translateX(0);
+}

@@ -1,5 +1,8 @@
 <header class="site-header" role="banner">
 	<div class="social-media">
+		<div class="mobile-logo">
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/svg/gd-logo.svg" alt="">
+		</div>
 		<div class="wrap">
 			<ul class="menu">
 				<li>

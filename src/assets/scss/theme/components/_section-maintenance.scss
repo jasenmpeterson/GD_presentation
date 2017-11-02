@@ -1,0 +1,80 @@
+.ease-of-maintenance .bullets-large {
+  margin-top: 1.5rem;
+}
+
+.ease-of-maintenance .product-background-image {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: opacity 640ms,transform 640ms;
+}
+.ease-of-maintenance.active .product-background-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ease-of-maintenance .product-image {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 640ms 20ms,transform 640ms 20ms;
+}
+.ease-of-maintenance.active .product-image {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ease-of-maintenance .bullet-list-wrap {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 640ms 35ms,transform 640ms 45ms;
+  transition-timing-function: cubic-bezier(.455,.03,.515,.955);
+}
+.ease-of-maintenance.active .bullet-list-wrap {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ease-of-maintenance .bullet-list-wrap h3 {
+  opacity: 0;
+  transform: translateX(100px);
+  transition: opacity 640ms 55ms,transform 640ms 65ms;
+}
+.ease-of-maintenance.active .bullet-list-wrap h3 {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.ease-of-maintenance .bullet-list-wrap li {
+  opacity: 0;
+  transform: translateX(100px);
+}
+.ease-of-maintenance.active .bullet-list-wrap li {
+  opacity: 1;
+  transform: translateX(0);
+}
+.ease-of-maintenance.active .bullet-list-wrap li:nth-of-type(1) {
+  opacity: 1;
+  transition: opacity 640ms 75ms,transform 640ms 85ms;
+}
+.ease-of-maintenance.active .bullet-list-wrap li:nth-of-type(2) {
+  opacity: 1;
+  transition: opacity 640ms 95ms,transform 640ms 105ms;
+}
+
+
+.ease-of-maintenance .bullets-large h3 {
+  opacity: 0;
+  transform: translateY(100px);
+  transition-timing-function: cubic-bezier(.455,.03,.515,.955);
+}
+
+.ease-of-maintenance.active .bullets-large h3:nth-of-type(1) {
+  transition: opacity 640ms 150ms,transform 640ms 160ms;
+}
+.ease-of-maintenance.active .bullets-large h3:nth-of-type(2) {
+  transition: opacity 640ms 170ms,transform 640ms 180ms;
+}
+
+.ease-of-maintenance.active .bullets-large h3 {
+  opacity: 1;
+  transform: translateY(0);
+}
