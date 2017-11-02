@@ -14,6 +14,16 @@ function progressBar(section) {
 
 $(window).scroll(function() {
 
+  // fade parallax nav out on scroll
+
+  $('.parallax-nav').css('opacity', '1')
+
+  clearTimeout( $.data( this, "scrollCheck" ) );
+
+  $.data( this, "scrollCheck", setTimeout(function() {
+    $('.parallax-nav').css('opacity', '0.2')
+  }, 250) )
+
   var scrollTop = $(this).scrollTop()
 
   $('.section').each(function () {
@@ -39,6 +49,8 @@ $('.section-button').click(function () {
 
 function loadPage(slug) {
 
+  $('.parallax-nav').css('opacity', '0')
+
   // ajax spinner
   $('.wipe').addClass('shown')
 
@@ -55,8 +67,6 @@ function loadPage(slug) {
 
       pageDisplay(data);
 
-      $('.parallax-nav').addClass('active')
-
       $('.menu-item a').click(function (e) {
 
         e.preventDefault();
@@ -65,7 +75,6 @@ function loadPage(slug) {
           var slug = $(this).text().toLowerCase()
           var slug = '/'+slug
           loadPage(slug)
-          $('.parallax-nav').removeClass('active')
         }
 
 
@@ -89,6 +98,8 @@ function pageDisplay(data) {
   $('.page-wrap').html(data)
 
   $('.wipe').removeClass('active shown')
+
+  TweenLite.to(window, 2, {scrollTo: 0})
 
 }
 
@@ -139,26 +150,32 @@ function scrollMagic() {
       $(event.target.triggerElement()).addClass('active')
     }).addTo(controller)
 
-  var designs = new ScrollMagic.Scene({
-    triggerElement: '.designs'
-  })
-    .on('start', function(event) {
-      $(event.target.triggerElement()).addClass('active')
-    }).addTo(controller)
+  if($('.designs').length) {
+    var designs = new ScrollMagic.Scene({
+      triggerElement: '.designs'
+    })
+      .on('start', function(event) {
+        $(event.target.triggerElement()).addClass('active')
+      }).addTo(controller)
+  }
 
-  var reliability = new ScrollMagic.Scene({
-    triggerElement: '.reliability'
-  })
-    .on('start', function(event) {
-      $(event.target.triggerElement()).addClass('active')
-    }).addTo(controller)
+  if($('.reliability').length) {
+    var reliability = new ScrollMagic.Scene({
+      triggerElement: '.reliability'
+    })
+      .on('start', function(event) {
+        $(event.target.triggerElement()).addClass('active')
+      }).addTo(controller)
+  }
 
-  var maintenance = new ScrollMagic.Scene({
-    triggerElement: '.ease-of-maintenance'
-  })
-    .on('start', function(event) {
-      $(event.target.triggerElement()).addClass('active')
-    }).addTo(controller)
+  if($('.ease-of-maintenance').length) {
+    var maintenance = new ScrollMagic.Scene({
+      triggerElement: '.ease-of-maintenance'
+    })
+      .on('start', function(event) {
+        $(event.target.triggerElement()).addClass('active')
+      }).addTo(controller)
+  }
 
   // scroll to
 
