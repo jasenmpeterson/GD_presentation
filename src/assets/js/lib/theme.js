@@ -49,7 +49,9 @@ $('.section-button').click(function () {
 
 function loadPage(slug) {
 
-  $('.parallax-nav').css('opacity', '0')
+  $('.parallax-nav').css('display', 'none');
+
+  TweenLite.to(window, 2, {scrollTo: 0});
 
   // ajax spinner
   $('.wipe').addClass('shown')
@@ -60,6 +62,8 @@ function loadPage(slug) {
     url: slug,
     context: document.body,
     success: function (data) {
+
+      $('.parallax-nav').css('display', 'block')
 
       $('.ajax-loader').removeClass('active')
 
@@ -98,8 +102,6 @@ function pageDisplay(data) {
   $('.page-wrap').html(data)
 
   $('.wipe').removeClass('active shown')
-
-  TweenLite.to(window, 2, {scrollTo: 0})
 
 }
 
